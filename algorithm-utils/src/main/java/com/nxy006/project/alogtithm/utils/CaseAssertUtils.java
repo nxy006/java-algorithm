@@ -3,7 +3,9 @@ package com.nxy006.project.alogtithm.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -50,5 +52,17 @@ public class CaseAssertUtils {
             return ;
         }
         logger.info("Case PASS!");
+    }
+
+    public static void assertContains(Collection<String> expecteds, String actual) {
+        if (!expecteds.contains(actual)) {
+            logger.error("Case Failed! Expected: {} but was: {}", expecteds, actual);
+            return ;
+        }
+        logger.info("Case PASS!");
+    }
+
+    public static void assertContains(String[] expecteds, String actual) {
+        assertContains(new ArrayList<>(Arrays.asList(expecteds)), actual);
     }
 }
