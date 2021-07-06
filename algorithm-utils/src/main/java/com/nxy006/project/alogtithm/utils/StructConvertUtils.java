@@ -14,6 +14,7 @@ public class StructConvertUtils {
             "^\\[\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*](\\s*,\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*\\])*\\s*\\]$";
 
     private static final String NULL_STR = "null";
+    private static final String EMPTY_INT_ARRAY = "[]";
 
     @Deprecated
     public static List<String> convertToStringList(String s) {
@@ -33,6 +34,9 @@ public class StructConvertUtils {
     }
 
     public static int[] convertToIntArray(String s) {
+        if (EMPTY_INT_ARRAY.equals(s)) {
+            return new int[]{};
+        }
         if (!Pattern.matches(INT_ARRAY_CONVERT_PATTERN, s)) {
             throw new IllegalArgumentException("cannot convert to int array, Input string format error: " + s);
         }

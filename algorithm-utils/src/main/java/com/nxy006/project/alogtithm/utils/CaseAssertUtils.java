@@ -39,6 +39,14 @@ public class CaseAssertUtils {
         logger.info("Case PASS!");
     }
 
+    public static <T> void assertEquals(double expected, double actual) {
+        if (expected != actual) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+        logger.info("Case PASS!");
+    }
+
     public static void assertEquals(int[] expected, int[] actual) {
         if (!Arrays.equals(expected, actual)) {
             logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
