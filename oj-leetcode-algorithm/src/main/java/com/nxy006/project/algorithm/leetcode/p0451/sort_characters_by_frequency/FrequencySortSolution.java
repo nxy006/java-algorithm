@@ -1,4 +1,4 @@
-package com.nxy006.project.algorithm.leetcode.p451.sort_characters_by_frequency;
+package com.nxy006.project.algorithm.leetcode.p0451.sort_characters_by_frequency;
 
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import javafx.util.Pair;
