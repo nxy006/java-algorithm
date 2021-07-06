@@ -108,4 +108,20 @@ public class CaseAssertUtils {
         }
         logger.info("Case PASS!");
     }
+
+    public static void assertEquals(int[][] expected, int[][] actual) {
+        if (expected.length != actual.length) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+        for(int i = 0; i < expected.length; i++) {
+            if (!Arrays.equals(expected[i], actual[i])) {
+                logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+                return ;
+            }
+        }
+
+        logger.info("Case PASS!");
+    }
+
 }
