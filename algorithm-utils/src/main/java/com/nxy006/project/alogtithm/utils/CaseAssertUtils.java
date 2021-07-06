@@ -1,5 +1,6 @@
 package com.nxy006.project.alogtithm.utils;
 
+import com.nxy006.project.alogtithm.utils.struct.ListNode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -46,6 +47,22 @@ public class CaseAssertUtils {
         logger.info("Case PASS!");
     }
 
+    public static void assertEqualsIgnoreOrder(int[] expected, int[] actual) {
+        if (expected != actual && (expected == null || actual == null || expected.length != actual.length)) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+
+        int[] expectedCopy = Arrays.copyOf(expected, expected.length), actualCopy = Arrays.copyOf(actual, actual.length);
+        Arrays.sort(expectedCopy);
+        Arrays.sort(actualCopy);
+        if (!Arrays.equals(expectedCopy, actualCopy)) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+        logger.info("Case PASS!");
+    }
+
     public static void assertEquals(String expected, String actual) {
         if (expected == null && actual != null || expected != null && !expected.equals(actual)) {
             logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
@@ -64,5 +81,23 @@ public class CaseAssertUtils {
 
     public static void assertContains(String[] expecteds, String actual) {
         assertContains(new ArrayList<>(Arrays.asList(expecteds)), actual);
+    }
+
+    public static void assertEquals(ListNode expected, ListNode actual) {
+        if (expected == null && actual != null) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+
+        ListNode tempExpected = expected, tempActual = actual;
+        while(tempExpected != null) {
+            if (tempActual == null || tempActual.val != tempExpected.val) {
+                logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+                return ;
+            }
+            tempExpected = tempExpected.next;
+            tempActual = tempActual.next;
+        }
+        logger.info("Case PASS!");
     }
 }

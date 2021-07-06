@@ -1,4 +1,4 @@
-# 1. Add Two Numbers `Medium`
+# 2. Add Two Numbers `Medium`
 
 - **Origin Link**: [https://leetcode.com/problems/add-two-numbers/](https://leetcode.com/problems/add-two-numbers/)
 - **Tag**: `linked-list`, `math`
