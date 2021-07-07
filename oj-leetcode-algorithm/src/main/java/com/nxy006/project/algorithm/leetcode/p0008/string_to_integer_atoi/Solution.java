@@ -55,5 +55,8 @@ public class Solution {
         CaseAssertUtils.assertEquals(4193, new Solution().myAtoi("4193 with words"));
         CaseAssertUtils.assertEquals(0, new Solution().myAtoi("words and 987"));
         CaseAssertUtils.assertEquals(-2147483648, new Solution().myAtoi("-91283472332"));
+        CaseAssertUtils.assertEquals(32, new Solution().myAtoi("0032"));
+        CaseAssertUtils.assertEquals(3, new Solution().myAtoi("3.14159"));
+        CaseAssertUtils.assertEquals(-12, new Solution().myAtoi("  -0012a42"));
     }
 }
