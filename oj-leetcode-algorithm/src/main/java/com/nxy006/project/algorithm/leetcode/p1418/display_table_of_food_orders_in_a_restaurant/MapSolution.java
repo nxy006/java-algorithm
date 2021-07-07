@@ -1,5 +1,8 @@
 package com.nxy006.project.algorithm.leetcode.p1418.display_table_of_food_orders_in_a_restaurant;
 
+import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
+import com.nxy006.project.alogtithm.utils.StructConvertUtils;
+
 import java.util.*;
 
 /**
@@ -47,10 +50,7 @@ public class MapSolution {
                 "[[\"David\",\"3\",\"Ceviche\"],[\"Corina\",\"10\",\"Beef Burrito\"],[\"David\",\"3\",\"Fried Chicken\"],[\"Carla\",\"5\",\"Water\"],[\"Carla\",\"5\",\"Ceviche\"],[\"Rous\",\"3\",\"Ceviche\"]]");
     }
 
-    /**
-     * TODO 待实现转换工具类
-     */
     private static void caseCheck(MapSolution solution, String expected, String s) {
-        // CaseAssertUtils.assertEquals(expected, solution.numSubarrayBoundedMax(StructConvertUtils.convertToIntArray(s, ","), left, right));
+        CaseAssertUtils.assertEquals(StructConvertUtils.convertToStringNestedList(expected), solution.displayTable(StructConvertUtils.convertToStringNestedList(s)));
     }
 }

@@ -124,4 +124,12 @@ public class CaseAssertUtils {
         logger.info("Case PASS!");
     }
 
+    public static <T> void assertEquals(Object expected, Object actual) {
+        if (expected != null && !expected.equals(actual)) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+        logger.info("Case PASS!");
+    }
+
 }
