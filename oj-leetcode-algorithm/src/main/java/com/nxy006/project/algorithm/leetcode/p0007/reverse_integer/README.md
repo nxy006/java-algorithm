@@ -49,7 +49,7 @@ Output: 0
 
 ```java
 class Solution {
-    public String convert(String s, int numRows) {
+    public int reverse(int x) {
         
     }
 }
