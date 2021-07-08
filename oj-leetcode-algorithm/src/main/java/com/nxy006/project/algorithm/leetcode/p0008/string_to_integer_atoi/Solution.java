@@ -33,16 +33,18 @@ public class Solution {
     }
 
     private String findValidString(String s) {
-        boolean allowLeadingWhite = true;
         StringBuilder sb = new StringBuilder();
         for(char c : s.toCharArray()) {
             if (c == ' ') {
-                if (allowLeadingWhite) continue;
+                if (sb.length() == 0) continue;             // 忽略前导空格
                 else break;
+            } else if (c == '+' || c == '-') {
+                if (sb.length() > 0) break;                 // +/- 号必须是第一个有效字符，否则退出
+            } else if (c < '0' || c > '9') {
+                break;                                      // 遇到其他符号，退出
             }
 
             sb.append(c);
-            allowLeadingWhite = false;
         }
         return sb.toString();
     }
