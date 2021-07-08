@@ -4,7 +4,15 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 双指针解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * 面积 = 最小高度 * 距离，本解法从最大的距离开始尝试，后续的尝试距离减少，因而一定要最小高度扩大，才可能得到更优解。
+ * 因此，每次尝试移动高度较低的指针，直到找到更高的高度为止。
+ *
+ * Runtime  3 ms    , beats 82.71 % of java submissions.
+ * Memory   52.4 MB , beats 80.96 % of java submissions.
+ * 07/09/2021 00:08
  */
 public class TwoPointSolution {
     public int maxArea(int[] height) {
