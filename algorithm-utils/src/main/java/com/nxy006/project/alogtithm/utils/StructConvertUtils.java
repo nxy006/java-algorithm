@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
 public class StructConvertUtils {
     private static final String INT_ARRAY_CONVERT_PATTERN =
             "^\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*\\]$";
+    private static final String STRING_ARRAY_CONVERT_PATTERN =
+            "^\\[\\s*\\S.*\\S(\\s*,\\s*\\S.*\\S)*\\s*\\]$";
     private static final String INT_MATRIX_CONVERT_PATTERN =
             "^\\[\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*](\\s*,\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*\\])*\\s*\\]$";
     private static final String STRING_MATRIX_CONVERT_PATTERN =
@@ -35,6 +37,14 @@ public class StructConvertUtils {
     public static int[] convertToIntArray(String s, String separator) {
         String[] arr = s.split(separator);
         return Arrays.stream(arr).mapToInt(Integer::valueOf).toArray();
+    }
+
+    public static String[] convertToStringArray(String s) {
+        String[] arr = convertToOriginStringArray(s);
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] = stringConverter.convertTo(arr[i]);
+        }
+        return arr;
     }
 
     public static int[] convertToIntArray(String s) {
@@ -142,6 +152,20 @@ public class StructConvertUtils {
             matrix[i] = SArr[i].replaceAll("[\\[\\]]", "").split(",");
         }
         return matrix;
+    }
+
+    /**
+     * 仅供内部调用：此方法只做简单结构检查和切分，未做数据转换
+     */
+    private static String[] convertToOriginStringArray(String s) {
+        if (EMPTY_INT_ARRAY.equals(s)) {
+            return new String[]{};
+        }
+        if (!Pattern.matches(STRING_ARRAY_CONVERT_PATTERN, s)) {
+            throw new IllegalArgumentException("cannot convert to int array, Input string format error: " + s);
+        }
+
+        return s.replaceAll("\\s", "").replaceAll("[\\[\\]]", "").split(",");
     }
 
     private interface Converter<T> {
