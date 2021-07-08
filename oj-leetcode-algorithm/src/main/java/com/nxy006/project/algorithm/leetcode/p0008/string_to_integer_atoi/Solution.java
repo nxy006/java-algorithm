@@ -3,7 +3,12 @@ package com.nxy006.project.algorithm.leetcode.p0008.string_to_integer_atoi;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 
 /**
- * TODO 待提交测试
+ * 常规算法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime  5 ms    , beats 22.56 % of java submissions.
+ * Memory   39.7 MB , beats 12.20 % of java submissions.
+ * 07/09/2021 00:03
  */
 public class Solution {
     public int myAtoi(String s) {
