@@ -4,9 +4,14 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 垂直扫描解法
+ * 时间复杂度：O(S)，空间复杂度：O(1)，其中 S 为所有输入的字符总量
+ *
+ * Runtime  2 ms    , beats 33.98 % of java submissions.
+ * Memory   38.5 MB , beats 34.15 % of java submissions.
+ * 07/09/2021 00:18
  */
-public class Solution {
+public class VerticalScanningSolution {
     public String longestCommonPrefix(String[] strs) {
         StringBuilder sb = new StringBuilder();
         int i = 0;
@@ -26,8 +31,8 @@ public class Solution {
     // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
 
     public static void main(String[] args) {
-        CaseAssertUtils.assertEquals("fl", new Solution().longestCommonPrefix(StructConvertUtils.convertToStringArray("[\"flower\",\"flow\",\"flight\"]")));
-        CaseAssertUtils.assertEquals("", new Solution().longestCommonPrefix(StructConvertUtils.convertToStringArray("[\"dog\",\"racecar\",\"car\"]")));
-        CaseAssertUtils.assertEquals("flower", new Solution().longestCommonPrefix(StructConvertUtils.convertToStringArray("[\"flower\",\"flower\"]")));
+        CaseAssertUtils.assertEquals("fl", new VerticalScanningSolution().longestCommonPrefix(StructConvertUtils.convertToStringArray("[\"flower\",\"flow\",\"flight\"]")));
+        CaseAssertUtils.assertEquals("", new VerticalScanningSolution().longestCommonPrefix(StructConvertUtils.convertToStringArray("[\"dog\",\"racecar\",\"car\"]")));
+        CaseAssertUtils.assertEquals("flower", new VerticalScanningSolution().longestCommonPrefix(StructConvertUtils.convertToStringArray("[\"flower\",\"flower\"]")));
     }
 }
