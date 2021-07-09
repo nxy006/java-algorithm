@@ -5,7 +5,12 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import java.util.Stack;
 
 /**
- * TODO 待提交测试
+ * 栈解法
+ * 时间复杂度：O(n)，空间复杂度：O(n)
+ *
+ * Runtime  1 ms    , beats 98.62 % of java submissions.
+ * Memory   37.3 MB , beats 43.91 % of java submissions.
+ * 07/09/2021 23:57
  */
 public class StackSolution {
     public boolean isValid(String s) {
