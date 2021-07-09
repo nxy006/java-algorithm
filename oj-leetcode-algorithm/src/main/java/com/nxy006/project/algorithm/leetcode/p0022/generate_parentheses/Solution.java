@@ -39,8 +39,8 @@ class Solution {
     // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
 
     public static void main(String[] args) {
-        caseCheck(new Solution(), 3, "((())) (()()) (())() ()(()) ()()()");
-        caseCheck(new Solution(), 1, "()");
+        caseCheck(new Solution(), 3, "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]");
+        caseCheck(new Solution(), 1, "[\"()\"]");
     }
 
     private static void caseCheck(Solution solution, int n, String expected) {

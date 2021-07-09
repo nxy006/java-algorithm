@@ -22,9 +22,13 @@ public class StructConvertUtils {
 
     private static final Converter<String> stringConverter = s -> s.replaceAll("(^\"|\"$)", "");
 
-    @Deprecated
     public static List<String> convertToStringList(String s) {
-        return convertToStringList(s, " ");
+        String[] arr = convertToOriginStringArray(s);
+        List<String> res = new ArrayList<>();
+        for(int i = 0; i < arr.length; i++) {
+            res.add(stringConverter.convertTo(arr[i]));
+        }
+        return res;
     }
 
     @Deprecated
@@ -106,7 +110,7 @@ public class StructConvertUtils {
     }
 
     public static ListNode convertToListNode(String s) {
-        if (NULL_STR.equals(s)) return null;
+        if (NULL_STR.equals(s) || EMPTY_INT_ARRAY.equals(s)) return null;
 
         // 转换为数组生成单向链表
         int[] arr = convertToIntArray(s);
