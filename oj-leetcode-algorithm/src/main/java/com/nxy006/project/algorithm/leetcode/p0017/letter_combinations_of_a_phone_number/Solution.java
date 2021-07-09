@@ -4,15 +4,23 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 回溯解法（递归）
+ * 时间复杂度：O(3^m·4^n)，空间复杂度：O(m+n)：其中 m 是输入中对应 3 个字母的数字个数，n 是输入中对应 4 个字母的数字个数
+ *
+ * Runtime  1 ms    , beats 71.09 % of java submissions.
+ * Memory   39.3 MB , beats 22.07 % of java submissions.
+ * 07/09/2021 23:50
  */
 public class Solution {
-    private final String[] btns = new String[]{"", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "xyz"};
+    private final String[] btns = new String[]{"", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
     public List<String> letterCombinations(String digits) {
+        if (digits.length() == 0) return Collections.emptyList();   // 不能一次通过：边界考虑不完善，无此判断会返回 [""] 而非 []
+
         List<String> res = new ArrayList<>();
         process(digits, 0, res, new StringBuilder());
         return res;
