@@ -5,7 +5,12 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
 
 /**
- * TODO 待提交测试
+ * 双指针解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime  0 ms  , beats 100.00 % of java submissions.
+ * Memory   39 MB , beats   7.95 % of java submissions.
+ * 07/09/2021 23:55
  */
 public class TwoPointSolution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
