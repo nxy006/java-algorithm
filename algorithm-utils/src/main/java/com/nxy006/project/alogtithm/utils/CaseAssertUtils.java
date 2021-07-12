@@ -55,6 +55,22 @@ public class CaseAssertUtils {
         logger.info("Case PASS!");
     }
 
+    /**
+     * 在给定长度范围内检查两个数组是否相等
+     */
+    public static void assertEqualsWithLength(int[] expected, int[] actual, int length) {
+        if (expected == null || actual == null) {
+            logger.error("Case Failed! Input cannot null expected was: {}, actual was: {}", expected, actual);
+        } else if (expected.length < length || actual.length < length) {
+            logger.error("Case Failed! Expected Length: {} but expected was: {}, actual was: {}", length, expected.length, actual.length);
+        } else {
+            int[] expectedNums = new int[length], actualNums = new int[length];
+            System.arraycopy(expected, 0, expectedNums, 0, length);
+            System.arraycopy(actual, 0, actualNums, 0, length);
+            assertEquals(expectedNums, actualNums);
+        }
+    }
+
     public static void assertEqualsIgnoreOrder(int[] expected, int[] actual) {
         if (expected != actual && (expected == null || actual == null || expected.length != actual.length)) {
             logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
