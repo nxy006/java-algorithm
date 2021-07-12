@@ -111,9 +111,10 @@ public class StructConvertUtils {
 
     public static ListNode convertToListNode(String s) {
         if (NULL_STR.equals(s) || EMPTY_INT_ARRAY.equals(s)) return null;
+        return convertToListNode(convertToIntArray(s));
+    }
 
-        // 转换为数组生成单向链表
-        int[] arr = convertToIntArray(s);
+    public static ListNode convertToListNode(int[] arr) {
         ListNode res = new ListNode(0), node = res;
         for (int num : arr) {
             node.next = new ListNode(num);
