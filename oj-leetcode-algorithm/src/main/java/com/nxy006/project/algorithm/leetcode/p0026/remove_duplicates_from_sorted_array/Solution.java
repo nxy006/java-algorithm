@@ -1,6 +1,5 @@
 package com.nxy006.project.algorithm.leetcode.p0026.remove_duplicates_from_sorted_array;
 
-import com.nxy006.project.algorithm.leetcode.p0004.median_of_two_sorted_arrays.TwoPointSolution;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
