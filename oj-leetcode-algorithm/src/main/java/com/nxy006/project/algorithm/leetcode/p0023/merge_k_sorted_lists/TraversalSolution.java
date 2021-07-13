@@ -5,9 +5,14 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
 
 /**
- * TODO 待提交测试
+ * 遍历解法（非最优解法）
+ * 时间复杂度：O(k·n)，空间复杂度：O(1)，其中 k 是链表数量、n 是链表平均长度
+ *
+ * Runtime  11 ms   , beats 25.92 % of java submissions.
+ * Memory   44.7 MB , beats  5.07 % of java submissions.
+ * 07/13/2021 22:24
  */
-public class Solution {
+public class TraversalSolution {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists.length == 0) return null;
 
@@ -43,15 +48,15 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[1,1,2,3,4,4,5,6]", "[[1,4,5],[1,3,4],[2,6]]");
-        caseCheck(new Solution(), "[]", "[]");
-        caseCheck(new Solution(), "[]", "[[]]");
+        caseCheck(new TraversalSolution(), "[1,1,2,3,4,4,5,6]", "[[1,4,5],[1,3,4],[2,6]]");
+        caseCheck(new TraversalSolution(), "[]", "[]");
+        caseCheck(new TraversalSolution(), "[]", "[[]]");
         // 自定义用例
-        caseCheck(new Solution(), "[1,1,1,1,1,1,1,1,1]", "[[1,1,1],[1,1,1,1,1],[1]]");
-        caseCheck(new Solution(), "[1,2,3,4,5,6,7,8,9]", "[[1,5,8],[2,3,6,7,9],[4]]");
+        caseCheck(new TraversalSolution(), "[1,1,1,1,1,1,1,1,1]", "[[1,1,1],[1,1,1,1,1],[1]]");
+        caseCheck(new TraversalSolution(), "[1,2,3,4,5,6,7,8,9]", "[[1,5,8],[2,3,6,7,9],[4]]");
     }
 
-    private static void caseCheck(Solution solution, String expected, String listStr) {
+    private static void caseCheck(TraversalSolution solution, String expected, String listStr) {
         if ("[]".equals(listStr) || "[[]]".equals(listStr)) {
             CaseAssertUtils.assertEquals(StructConvertUtils.convertToListNode(expected), solution.mergeKLists(new ListNode[]{}));
         } else {
