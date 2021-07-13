@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class StructConvertUtils {
     private static final String INT_ARRAY_CONVERT_PATTERN =
-            "^\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*\\]$";
+            "^\\[\\s*[-]?\\d+(\\s*,\\s*[-]?\\d+)*\\s*\\]$";
     private static final String STRING_ARRAY_CONVERT_PATTERN =
             "^\\[\\s*\\S.*\\S(\\s*,\\s*\\S.*\\S)*\\s*\\]$";
     private static final String INT_MATRIX_CONVERT_PATTERN =
