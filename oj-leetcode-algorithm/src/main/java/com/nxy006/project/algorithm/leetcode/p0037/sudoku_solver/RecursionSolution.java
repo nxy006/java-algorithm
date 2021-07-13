@@ -9,9 +9,14 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * TODO 待提交测试
+ * Map 解法
+ * 时间复杂度：O(9^81)，空间复杂度：O(1)，本题算法时间复杂度很大程度取决于给定的输入数据，这里只给出渐进复杂度上界，即 81 个位置每个位置 9 种取值
+ *
+ * Runtime  36 ms   , beats 8.28 % of java submissions.
+ * Memory   39.8 MB , beats 5.12 % of java submissions.
+ * 07/13/2021 23:02
  */
-public class Solution {
+public class RecursionSolution {
     public void solveSudoku(char[][] board) {
         Map<String, Set<Integer>> map = new HashMap<>();
         for(int i = 0; i < 9; i++) {
@@ -96,7 +101,7 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "" +
+        caseCheck(new RecursionSolution(), "" +
                         "[[\"5\",\"3\",\"4\",\"6\",\"7\",\"8\",\"9\",\"1\",\"2\"]" +
                         ",[\"6\",\"7\",\"2\",\"1\",\"9\",\"5\",\"3\",\"4\",\"8\"]" +
                         ",[\"1\",\"9\",\"8\",\"3\",\"4\",\"2\",\"5\",\"6\",\"7\"]" +
@@ -118,7 +123,7 @@ public class Solution {
                         ",[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]");
     }
 
-    private static void caseCheck(Solution solution, String expectedStr, String matrixStr) {
+    private static void caseCheck(RecursionSolution solution, String expectedStr, String matrixStr) {
         char[][] board = StructConvertUtils.convertToCharMatrix(matrixStr);
         solution.solveSudoku(board);
         CaseAssertUtils.assertEquals(StructConvertUtils.convertToCharMatrix(expectedStr), board);
