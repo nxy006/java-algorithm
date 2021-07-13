@@ -5,9 +5,14 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
 
 /**
- * TODO 待提交测试
+ * 遍历解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   38.9 MB , beats   7.60 % of java submissions.
+ * 07/13/2021 22:30
  */
-public class Solution {
+public class TraversalSolution {
     public ListNode swapPairs(ListNode head) {
         ListNode res = new ListNode(0), node = res;
         res.next = head;
@@ -28,14 +33,14 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[2,1,4,3]", "[1,2,3,4]");
-        caseCheck(new Solution(), "[]", "[]");
-        caseCheck(new Solution(), "[1]", "[1]");
+        caseCheck(new TraversalSolution(), "[2,1,4,3]", "[1,2,3,4]");
+        caseCheck(new TraversalSolution(), "[]", "[]");
+        caseCheck(new TraversalSolution(), "[1]", "[1]");
         // 自定义用例
-        caseCheck(new Solution(), "[2,1,4,3,6,5,7]", "[1,2,3,4,5,6,7]");
+        caseCheck(new TraversalSolution(), "[2,1,4,3,6,5,7]", "[1,2,3,4,5,6,7]");
     }
 
-    private static void caseCheck(Solution solution, String expected, String listStr) {
+    private static void caseCheck(TraversalSolution solution, String expected, String listStr) {
         CaseAssertUtils.assertEquals(StructConvertUtils.convertToListNode(expected), solution.swapPairs(StructConvertUtils.convertToListNode(listStr)));
     }
 }
