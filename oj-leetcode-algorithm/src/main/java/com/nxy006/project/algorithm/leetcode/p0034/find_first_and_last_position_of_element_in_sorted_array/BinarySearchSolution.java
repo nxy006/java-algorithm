@@ -4,7 +4,12 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 二分解法
+ * 时间复杂度：O(log_n)，空间复杂度：O(1)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   42.2 MB , beats  54.76 % of java submissions.
+ * 07/13/2021 22:55
  */
 public class BinarySearchSolution {
     public int[] searchRange(int[] nums, int target) {
