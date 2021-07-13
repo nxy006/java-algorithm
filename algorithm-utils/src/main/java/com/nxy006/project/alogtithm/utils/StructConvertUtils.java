@@ -21,6 +21,7 @@ public class StructConvertUtils {
     private static final String EMPTY_INT_ARRAY = "[]";
 
     private static final Converter<String> stringConverter = s -> s.replaceAll("(^\"|\"$)", "");
+    private static final Converter<Character> characterConverter = s -> s.replaceAll("(^\"|\"$)", "").charAt(0);
 
     public static List<String> convertToStringList(String s) {
         String[] arr = convertToOriginStringArray(s);
@@ -95,6 +96,17 @@ public class StructConvertUtils {
                 matrixRow[j] = Integer.parseInt(SNum[j]);
             }
             matrix[i] = matrixRow;
+        }
+        return matrix;
+    }
+
+    public static char[][] convertToCharMatrix(String s) {
+        String[][] originMatrix = convertToOriginStringMatrix(s);
+        char[][] matrix = new char[originMatrix.length][originMatrix[0].length];
+        for(int i = 0; i < originMatrix.length; i++) {
+            for(int j = 0; j < originMatrix[i].length; j++) {
+                matrix[i][j] = characterConverter.convertTo(originMatrix[i][j]);
+            }
         }
         return matrix;
     }
