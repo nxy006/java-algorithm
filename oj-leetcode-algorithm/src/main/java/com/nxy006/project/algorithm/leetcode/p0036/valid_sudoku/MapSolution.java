@@ -6,9 +6,14 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import java.util.*;
 
 /**
- * TODO 待提交测试
+ * Map 解法
+ * 时间复杂度：O(1)，空间复杂度：O(1)，一轮遍历只需要固定遍历 81 个位置，因而为常数级
+ *
+ * Runtime  15 ms , beats 17.29 % of java submissions.
+ * Memory   40 MB , beats 22.98 % of java submissions.
+ * 07/13/2021 22:58
  */
-public class Solution {
+public class MapSolution {
     public boolean isValidSudoku(char[][] board) {
         Map<String, Set<Integer>> map = new HashMap<>();
         for(int i = 0; i < board.length; i++) {
@@ -38,7 +43,7 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), true, "" +
+        caseCheck(new MapSolution(), true, "" +
                 "[[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"]\n" +
                 ",[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"]\n" +
                 ",[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"]\n" +
@@ -48,7 +53,7 @@ public class Solution {
                 ",[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"]\n" +
                 ",[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"]\n" +
                 ",[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]");
-        caseCheck(new Solution(), false, "" +
+        caseCheck(new MapSolution(), false, "" +
                 "[[\"8\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"]\n" +
                 ",[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"]\n" +
                 ",[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"]\n" +
@@ -60,7 +65,7 @@ public class Solution {
                 ",[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]");
     }
 
-    private static void caseCheck(Solution solution, boolean expected, String matrixStr) {
+    private static void caseCheck(MapSolution solution, boolean expected, String matrixStr) {
         CaseAssertUtils.assertEquals(expected, solution.isValidSudoku(StructConvertUtils.convertToCharMatrix(matrixStr)));
     }
 }
