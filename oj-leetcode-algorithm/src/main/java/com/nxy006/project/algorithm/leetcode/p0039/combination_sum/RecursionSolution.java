@@ -7,9 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ *
+ * Runtime  2 ms  , beats 98.36 % of java submissions.
+ * Memory   39 MB , beats 80.92 % of java submissions.
+ * 07/15/2021 01:44
  */
-public class Solution {
+public class RecursionSolution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
         process(candidates, target, 0, 0, res, new ArrayList<>());
@@ -34,14 +38,14 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[2,2,3],[7]]", "[2,3,6,7]",7);
-        caseCheck(new Solution(), "[[2,2,2,2],[2,3,3],[3,5]]", "[2,3,5]",8);
-        caseCheck(new Solution(), "[[]]", "[2]",1);
-        caseCheck(new Solution(), "[[1]]", "[1]",1);
-        caseCheck(new Solution(), "[[1,1]]", "[1]",2);
+        caseCheck(new RecursionSolution(), "[[2,2,3],[7]]", "[2,3,6,7]",7);
+        caseCheck(new RecursionSolution(), "[[2,2,2,2],[2,3,3],[3,5]]", "[2,3,5]",8);
+        caseCheck(new RecursionSolution(), "[[]]", "[2]",1);
+        caseCheck(new RecursionSolution(), "[[1]]", "[1]",1);
+        caseCheck(new RecursionSolution(), "[[1,1]]", "[1]",2);
     }
 
-    private static void caseCheck(Solution solution, String expected, String numsStr, int target) {
+    private static void caseCheck(RecursionSolution solution, String expected, String numsStr, int target) {
         CaseAssertUtils.assertEquals(StructConvertUtils.convertToIntegerNestedList(expected), solution.combinationSum(StructConvertUtils.convertToIntArray(numsStr), target));
     }
 }
