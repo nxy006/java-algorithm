@@ -4,7 +4,12 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 二分搜索解法
+ * 时间复杂度：O(log_n)，空间复杂度：O(1)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   38.4 MB , beats  77.63 % of java submissions.
+ * 07/15/2021 01:47
  */
 public class BinarySearchSolution {
     public int findPeakElement(int[] nums) {
