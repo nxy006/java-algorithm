@@ -3,7 +3,11 @@ package com.nxy006.project.algorithm.leetcode.p0038.count_and_say;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 
 /**
- * TODO 待提交测试
+ * 模拟解法（递归）
+ *
+ * Runtime  1 ms  , beats 99.86 % of java submissions.
+ * Memory   37 MB , beats 59.39 % of java submissions.
+ * 07/15/2021 01:41
  */
 public class Solution {
     public String countAndSay(int n) {
