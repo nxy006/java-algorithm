@@ -176,4 +176,14 @@ public class CaseAssertUtils {
         logger.info("Case PASS!");
     }
 
+    public static <T> void assertContains(int[] expected, int actual) {
+        for(int num : expected) {
+            if (num == actual) {
+                logger.info("Case PASS!");
+                return;
+            }
+        }
+        logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+    }
+
 }
