@@ -15,13 +15,15 @@ public class StructConvertUtils {
     private static final String INT_MATRIX_CONVERT_PATTERN =
             "^\\[\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*](\\s*,\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*\\])*\\s*\\]$";
     private static final String STRING_MATRIX_CONVERT_PATTERN =
-            "^\\[\\s*\\[\\s*\\S.*\\S(\\s*,\\s*\\S.*\\S)*\\s*](\\s*,\\s*\\[\\s*\\S.*\\S(\\s*,\\s*\\S.*\\S)*\\s*\\])*\\s*\\]$";
+            "^\\[\\s*\\[\\s*\\S(.*\\S)*(\\s*,\\s*\\S(.*\\S)*)*\\s*](\\s*,\\s*\\[\\s*\\S(.*\\S)*(\\s*,\\s*\\S(.*\\S)*)*\\s*\\])*\\s*\\]$";
 
     private static final String NULL_STR = "null";
     private static final String EMPTY_INT_ARRAY = "[]";
+    private static final String EMPTY_MATRIX = "[[]]";
 
     private static final Converter<String> stringConverter = s -> s.replaceAll("(^\"|\"$)", "");
     private static final Converter<Character> characterConverter = s -> s.replaceAll("(^\"|\"$)", "").charAt(0);
+    private static final Converter<Integer> integerConverter = s -> Integer.valueOf(s.replaceAll("(^\"|\"$)", ""));
 
     public static List<String> convertToStringList(String s) {
         String[] arr = convertToOriginStringArray(s);
@@ -139,6 +141,10 @@ public class StructConvertUtils {
         return convertToNestedList(s, stringConverter);
     }
 
+    public static List<List<Integer>> convertToIntegerNestedList(String s) {
+        return convertToNestedList(s, integerConverter);
+    }
+
     public static <T> List<List<T>> convertToNestedList(String s, Converter<T> converter) {
         String[][] matrix = convertToOriginStringMatrix(s);
         List<List<T>> res = new ArrayList<>(matrix.length);
@@ -157,6 +163,9 @@ public class StructConvertUtils {
      * 仅供内部调用：此方法只做简单结构检查和切分，未做数据转换
      */
     private static String[][] convertToOriginStringMatrix(String s) {
+        if (EMPTY_MATRIX.equals(s)) {
+            return new String[][]{};
+        }
         if (!Pattern.matches(STRING_MATRIX_CONVERT_PATTERN, s)) {
             throw new IllegalArgumentException("cannot convert to matrix, Input string format error: " + s);
         }
