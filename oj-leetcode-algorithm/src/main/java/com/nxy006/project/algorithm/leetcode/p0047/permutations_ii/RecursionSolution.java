@@ -8,9 +8,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ *
+ * Runtime  1 ms  , beats 99.43 % of java submissions.
+ * Memory   40 MB , beats 25.81 % of java submissions.
+ * 07/15/2021 23:30
  */
-public class Solution {
+public class RecursionSolution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
@@ -42,14 +46,14 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[1,1,2],[1,2,1],[2,1,1]]", "[1,1,2]");
-        caseCheck(new Solution(), "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]", "[1,2,3]");
+        caseCheck(new RecursionSolution(), "[[1,1,2],[1,2,1],[2,1,1]]", "[1,1,2]");
+        caseCheck(new RecursionSolution(), "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]", "[1,2,3]");
         // 自定义用例
-        caseCheck(new Solution(), "[[1,1,1]]", "[1,1,1]");
-        caseCheck(new Solution(), "[[5]]", "[5]");
+        caseCheck(new RecursionSolution(), "[[1,1,1]]", "[1,1,1]");
+        caseCheck(new RecursionSolution(), "[[5]]", "[5]");
     }
 
-    private static void caseCheck(Solution solution, String expected, String numsStr) {
+    private static void caseCheck(RecursionSolution solution, String expected, String numsStr) {
         CaseAssertUtils.assertEqualsIgnoreOrder(StructConvertUtils.convertToIntegerNestedList(expected), solution.permuteUnique(StructConvertUtils.convertToIntArray(numsStr)));
     }
 }
