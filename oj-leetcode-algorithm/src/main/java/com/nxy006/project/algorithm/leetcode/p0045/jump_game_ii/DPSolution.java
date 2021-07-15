@@ -6,7 +6,12 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import java.util.Arrays;
 
 /**
- * TODO 待提交测试
+ * 动态规划解法
+ * 时间复杂度：O(n^2)，空间复杂度：O(n)
+ *
+ * Runtime  422 ms  , beats 5.01 % of java submissions.
+ * Memory   39.1 MB , beats 81.50 % of java submissions.
+ * 07/08/2021 23:57
  */
 public class DPSolution {
     public int jump(int[] nums) {
