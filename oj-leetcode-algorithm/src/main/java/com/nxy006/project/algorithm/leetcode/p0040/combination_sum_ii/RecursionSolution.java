@@ -8,9 +8,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ *
+ * Runtime  2 ms  , beats 99.01 % of java submissions.
+ * Memory   39 MB , beats 81.59 % of java submissions.
+ * 07/15/2021 23:13
  */
-public class Solution {
+public class RecursionSolution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(candidates);
@@ -42,11 +46,11 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[1,1,6],[1,2,5],[1,7],[2,6]]", "[10,1,2,7,6,1,5]",8);
-        caseCheck(new Solution(), "[[1,2,2],[5]]", "[2,5,2,1,2]",5);
+        caseCheck(new RecursionSolution(), "[[1,1,6],[1,2,5],[1,7],[2,6]]", "[10,1,2,7,6,1,5]",8);
+        caseCheck(new RecursionSolution(), "[[1,2,2],[5]]", "[2,5,2,1,2]",5);
     }
 
-    private static void caseCheck(Solution solution, String expected, String numsStr, int target) {
+    private static void caseCheck(RecursionSolution solution, String expected, String numsStr, int target) {
         // TODO 实际应该是忽略顺序的比较
         CaseAssertUtils.assertEquals(StructConvertUtils.convertToIntegerNestedList(expected), solution.combinationSum2(StructConvertUtils.convertToIntArray(numsStr), target));
     }
