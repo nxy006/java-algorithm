@@ -6,9 +6,13 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import java.util.*;
 
 /**
- * TODO 待提交测试
+ * Map 解法
+ *
+ * Runtime  5 ms    , beats 99.06 % of java submissions.
+ * Memory   41.9 MB , beats 83.21 % of java submissions.
+ * 07/15/2021 23:32
  */
-public class Solution {
+public class MapSolution {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for(String str : strs) {
@@ -32,12 +36,12 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]", "[\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]");
-        caseCheck(new Solution(), "[[\"\"]]", "[\"\"]");
-        caseCheck(new Solution(), "[[\"a\"]]", "[\"a\"]");
+        caseCheck(new MapSolution(), "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]", "[\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]");
+        caseCheck(new MapSolution(), "[[\"\"]]", "[\"\"]");
+        caseCheck(new MapSolution(), "[[\"a\"]]", "[\"a\"]");
     }
 
-    private static void caseCheck(Solution solution, String expected, String strsStr) {
+    private static void caseCheck(MapSolution solution, String expected, String strsStr) {
         // TODO 修改为无关顺序的比较（两层 List 均顺序无关）
         CaseAssertUtils.assertEqualsIgnoreOrder(StructConvertUtils.convertToStringNestedList(expected), solution.groupAnagrams(StructConvertUtils.convertToStringArray(strsStr)));
     }
