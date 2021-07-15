@@ -3,7 +3,12 @@ package com.nxy006.project.algorithm.leetcode.p0043.multiply_strings;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 
 /**
- * TODO 待提交测试
+ * 数学解法
+ * 时间复杂度：O(mn)，空间复杂度：O(m+n)，m、n 分别是 num1、nums2 的长度
+ *
+ * Runtime  4 ms  , beats 57.59 % of java submissions.
+ * Memory   39 MB , beats 60.64 % of java submissions.
+ * 07/15/2021 23:19
  */
 public class Solution {
     public String multiply(String num1, String num2) {
