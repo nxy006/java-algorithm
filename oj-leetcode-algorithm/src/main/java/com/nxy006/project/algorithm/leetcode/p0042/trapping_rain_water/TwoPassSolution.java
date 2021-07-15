@@ -4,10 +4,17 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 两轮遍历解法
+ * 时间复杂度：O(n)，空间复杂度：O(n)
+ *
+ * Runtime  1 ms    , beats 85.40 % of java submissions.
+ * Memory   38.9 MB , beats 25.56 % of java submissions.
+ * 07/15/2021 23:16
  */
 public class TwoPassSolution {
     public int trap(int[] height) {
+        if (height.length == 0) return 0;
+
         int[] lHeigths = new int[height.length];
         lHeigths[0] = height[0];
         for(int i = 1; i < height.length; i++) {
