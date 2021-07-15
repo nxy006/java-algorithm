@@ -7,9 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ *
+ * Runtime  1 ms    , beats 92.92 % of java submissions.
+ * Memory   39.2 MB , beats 67.53 % of java submissions.
+ * 07/15/2021 23:26
  */
-public class Solution {
+public class RecursionSolution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         process(nums, new boolean[nums.length], res, new ArrayList<>());
@@ -37,11 +41,11 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]", "[1,2,3]");
-        caseCheck(new Solution(), "[[0,1],[1,0]]", "[0,1]");
+        caseCheck(new RecursionSolution(), "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]", "[1,2,3]");
+        caseCheck(new RecursionSolution(), "[[0,1],[1,0]]", "[0,1]");
     }
 
-    private static void caseCheck(Solution solution, String expected, String numsStr) {
+    private static void caseCheck(RecursionSolution solution, String expected, String numsStr) {
         // TODO 实际应该是忽略顺序的比较
         CaseAssertUtils.assertEquals(StructConvertUtils.convertToIntegerNestedList(expected), solution.permute(StructConvertUtils.convertToIntArray(numsStr)));
     }
