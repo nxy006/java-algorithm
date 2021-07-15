@@ -4,7 +4,7 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 未完成解答
+ * TODO 待提交测试
  */
 public class TwoPassSolution {
     public int trap(int[] height) {
