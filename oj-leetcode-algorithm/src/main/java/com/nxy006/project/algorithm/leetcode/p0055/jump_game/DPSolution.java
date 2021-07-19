@@ -4,9 +4,13 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 动态规划解法（非最优解法）
+ *
+ * Runtime  78 ms   , beats 28.73 % of java submissions.
+ * Memory   39.6 MB , beats 79.11 % of java submissions.
+ * 07/19/2021 23:23
  */
-public class Solution {
+public class DPSolution {
     public boolean canJump(int[] nums) {
         if (nums.length <= 1) return nums.length == 1;
 
@@ -28,15 +32,15 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), true,"[2,3,1,1,4]");
-        caseCheck(new Solution(), false,"[3,2,1,0,4]");
+        caseCheck(new DPSolution(), true,"[2,3,1,1,4]");
+        caseCheck(new DPSolution(), false,"[3,2,1,0,4]");
         // 自定义用例
-        caseCheck(new Solution(), false,"[1,1,1,0,1,1]");
-        caseCheck(new Solution(), true,"[10,9,8,7,6,5,4,3,2,1,0]");
-        caseCheck(new Solution(), false,"[0,1,1,0,1,1]");
+        caseCheck(new DPSolution(), false,"[1,1,1,0,1,1]");
+        caseCheck(new DPSolution(), true,"[10,9,8,7,6,5,4,3,2,1,0]");
+        caseCheck(new DPSolution(), false,"[0,1,1,0,1,1]");
     }
 
-    private static void caseCheck(Solution solution, boolean expected, String numsStr) {
+    private static void caseCheck(DPSolution solution, boolean expected, String numsStr) {
         CaseAssertUtils.assertEquals(expected, solution.canJump(StructConvertUtils.convertToIntArray(numsStr)));
     }
 }
