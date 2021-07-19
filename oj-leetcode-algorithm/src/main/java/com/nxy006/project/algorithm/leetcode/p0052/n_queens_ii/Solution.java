@@ -4,9 +4,13 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   35.6 MB , beats  87.83 % of java submissions.
+ * 07/19/2021 23:16
  */
-public class Solution {
+public class RecursionSolution {
     public int totalNQueens(int n) {
         return process(n, new boolean[n], new boolean[4*n], new boolean[4*n], 0);
     }
@@ -31,7 +35,7 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        CaseAssertUtils.assertEquals(2, new Solution().totalNQueens(4));
-        CaseAssertUtils.assertEquals(1, new Solution().totalNQueens(1));
+        CaseAssertUtils.assertEquals(2, new RecursionSolution().totalNQueens(4));
+        CaseAssertUtils.assertEquals(1, new RecursionSolution().totalNQueens(1));
     }
 }
