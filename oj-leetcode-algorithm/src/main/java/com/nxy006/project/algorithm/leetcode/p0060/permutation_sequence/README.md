@@ -50,7 +50,7 @@ Output: "123"
 - `1 <= k <= n!`
 
 
-##p Solution Template
+## Solution Template
 
 ```java
 class Solution {
