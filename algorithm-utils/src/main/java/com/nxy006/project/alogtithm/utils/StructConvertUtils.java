@@ -1,6 +1,8 @@
 package com.nxy006.project.alogtithm.utils;
 
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
+import com.nxy006.project.alogtithm.utils.struct.TreeNode;
+import sun.reflect.generics.tree.Tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -157,6 +159,11 @@ public class StructConvertUtils {
             res.add(list);
         }
         return res;
+    }
+
+    // TODO 尚未实现
+    public static TreeNode convertToTreeNode(String s) {
+        return new TreeNode(0);
     }
 
     /**
