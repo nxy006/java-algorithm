@@ -7,9 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ *
+ * Runtime  2 ms    , beats 92.77 % of java submissions.
+ * Memory   39.7 MB , beats 35.86 % of java submissions.
+ * 07/19/2021 23:14
  */
-public class Solution {
+public class RecursionSolution {
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> res = new ArrayList<>();
         process(n, new boolean[n], new boolean[4*n], new boolean[4*n], 0, res, new ArrayList<>());
@@ -48,11 +52,11 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[\".Q..\",\"...Q\",\"Q...\",\"..Q.\"],[\"..Q.\",\"Q...\",\"...Q\",\".Q..\"]]", 4);
-        caseCheck(new Solution(), "[[\"Q\"]]", 1);
+        caseCheck(new RecursionSolution(), "[[\".Q..\",\"...Q\",\"Q...\",\"..Q.\"],[\"..Q.\",\"Q...\",\"...Q\",\".Q..\"]]", 4);
+        caseCheck(new RecursionSolution(), "[[\"Q\"]]", 1);
     }
 
-    private static void caseCheck(Solution solution, String expected, int n) {
+    private static void caseCheck(RecursionSolution solution, String expected, int n) {
         CaseAssertUtils.assertEqualsIgnoreOrder(StructConvertUtils.convertToStringNestedList(expected), solution.solveNQueens(n));
     }
 }
