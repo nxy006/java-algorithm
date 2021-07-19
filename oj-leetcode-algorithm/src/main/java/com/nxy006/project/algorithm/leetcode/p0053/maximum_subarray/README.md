@@ -1,6 +1,6 @@
 # 53. Maximum Subarray `Easy`
 
-- **Origin Link**: [https://leetcode.com/problems/n-queens-ii/](https://leetcode.com/problems/n-queens-ii/)
+- **Origin Link**: [https://leetcode.com/problems/maximum-subarray/](https://leetcode.com/problems/maximum-subarray/)
 - **Tag**: `array`, `divide-and-conquer`, `dynamic-programming`
 
 
