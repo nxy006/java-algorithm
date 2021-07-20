@@ -83,6 +83,9 @@ public class StructConvertUtils {
      * @return 二维数组
      */
     public static int[][] convertToIntMatrix(String s) {
+        if (EMPTY_INT_ARRAY.equals(s) || EMPTY_MATRIX.equals(s)) {
+            return new int[][]{};
+        }
         if (!Pattern.matches(INT_MATRIX_CONVERT_PATTERN, s)) {
             throw new IllegalArgumentException("cannot convert to matrix, Input string format error: " + s);
         }
