@@ -9,9 +9,14 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 常规排序解法
+ * 时间复杂度：O(n log_n)，空间复杂度：O(log_n)，空间复杂度为排序的栈开销
+ *
+ * Runtime  6 ms    , beats 60.37 % of java submissions.
+ * Memory   41.7 MB , beats 52.19 % of java submissions.
+ * 07/20/2021 22:37
  */
-public class Solution {
+public class SortSolution {
     public int[][] merge(int[][] intervals) {
         if (intervals.length == 1) return intervals;
 
@@ -42,16 +47,16 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[1,6],[8,10],[15,18]]","[[1,3],[2,6],[8,10],[15,18]]");
-        caseCheck(new Solution(), "[[1,5]]","[[1,4],[4,5]]");
+        caseCheck(new SortSolution(), "[[1,6],[8,10],[15,18]]","[[1,3],[2,6],[8,10],[15,18]]");
+        caseCheck(new SortSolution(), "[[1,5]]","[[1,4],[4,5]]");
         // 自定义用例
-        caseCheck(new Solution(), "[[1,1]]","[[1,1],[1,1],[1,1]]");
-        caseCheck(new Solution(), "[[1,6]]","[[1,1],[2,2],[1,6]]");
-        caseCheck(new Solution(), "[[1,3],[5,8],[9,10]]","[[1,3],[9,10],[5,8]]");
-        caseCheck(new Solution(), "[[1,3]]","[[1,3]]");
+        caseCheck(new SortSolution(), "[[1,1]]","[[1,1],[1,1],[1,1]]");
+        caseCheck(new SortSolution(), "[[1,6]]","[[1,1],[2,2],[1,6]]");
+        caseCheck(new SortSolution(), "[[1,3],[5,8],[9,10]]","[[1,3],[9,10],[5,8]]");
+        caseCheck(new SortSolution(), "[[1,3]]","[[1,3]]");
     }
 
-    private static void caseCheck(Solution solution, String expectedStr, String numsStr) {
+    private static void caseCheck(SortSolution solution, String expectedStr, String numsStr) {
         CaseAssertUtils.assertEquals(StructConvertUtils.convertToIntMatrix(expectedStr), solution.merge(StructConvertUtils.convertToIntMatrix(numsStr)));
     }
 }
