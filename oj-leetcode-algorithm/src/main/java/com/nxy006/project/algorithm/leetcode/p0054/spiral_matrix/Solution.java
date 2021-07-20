@@ -7,7 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 常规遍历解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)，空间复杂度未考虑输出数组
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   37.4 MB , beats  37.40 % of java submissions.
+ * 07/20/2021 22:43
  */
 public class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
