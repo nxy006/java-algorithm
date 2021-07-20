@@ -8,7 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 常规遍历解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime  2 ms    , beats 47.57 % of java submissions.
+ * Memory   41.3 MB , beats 63.54 % of java submissions.
+ * 07/20/2021 22:40
  */
 public class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
