@@ -139,6 +139,15 @@ public class StructConvertUtils {
         return res.next;
     }
 
+    public static List<Integer> convertToIntegerList(String s) {
+        String[] arr = convertToOriginStringArray(s);
+        List<Integer> res = new ArrayList<>();
+        for(int i = 0; i < arr.length; i++) {
+            res.add(integerConverter.convertTo(arr[i]));
+        }
+        return res;
+    }
+
     public static List<List<String>> convertToStringNestedList(String s) {
         return convertToNestedList(s, stringConverter);
     }
