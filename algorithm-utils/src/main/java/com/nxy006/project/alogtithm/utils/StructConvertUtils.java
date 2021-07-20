@@ -27,19 +27,18 @@ public class StructConvertUtils {
     private static final Converter<Character> characterConverter = s -> s.replaceAll("(^\"|\"$)", "").charAt(0);
     private static final Converter<Integer> integerConverter = s -> Integer.valueOf(s.replaceAll("(^\"|\"$)", ""));
 
-    public static List<String> convertToStringList(String s) {
-        String[] arr = convertToOriginStringArray(s);
-        List<String> res = new ArrayList<>();
-        for(int i = 0; i < arr.length; i++) {
-            res.add(stringConverter.convertTo(arr[i]));
-        }
-        return res;
-    }
+    // Array 数组相关------------------------------------------------------------------------------------------------------------------- //
 
-    @Deprecated
-    public static List<String> convertToStringList(String s, String separator) {
-        String[] arr = s.split(separator);
-        return new ArrayList<>(Arrays.asList(arr));
+    public static int[] convertToIntArray(String s) {
+        if (EMPTY_INT_ARRAY.equals(s)) {
+            return new int[]{};
+        }
+        if (!Pattern.matches(INT_ARRAY_CONVERT_PATTERN, s)) {
+            throw new IllegalArgumentException("cannot convert to int array, Input string format error: " + s);
+        }
+
+        String[] SArr = s.replaceAll("\\s", "").replaceAll("[\\[\\]]", "").split(",");
+        return Arrays.stream(SArr).mapToInt(Integer::valueOf).toArray();
     }
 
     @Deprecated
@@ -54,18 +53,6 @@ public class StructConvertUtils {
             arr[i] = stringConverter.convertTo(arr[i]);
         }
         return arr;
-    }
-
-    public static int[] convertToIntArray(String s) {
-        if (EMPTY_INT_ARRAY.equals(s)) {
-            return new int[]{};
-        }
-        if (!Pattern.matches(INT_ARRAY_CONVERT_PATTERN, s)) {
-            throw new IllegalArgumentException("cannot convert to int array, Input string format error: " + s);
-        }
-
-        String[] SArr = s.replaceAll("\\s", "").replaceAll("[\\[\\]]", "").split(",");
-        return Arrays.stream(SArr).mapToInt(Integer::valueOf).toArray();
     }
 
     /**
@@ -128,25 +115,27 @@ public class StructConvertUtils {
         return matrix;
     }
 
-    public static ListNode convertToListNode(String s) {
-        if (NULL_STR.equals(s) || EMPTY_INT_ARRAY.equals(s)) return null;
-        return convertToListNode(convertToIntArray(s));
-    }
-
-    public static ListNode convertToListNode(int[] arr) {
-        ListNode res = new ListNode(0), node = res;
-        for (int num : arr) {
-            node.next = new ListNode(num);
-            node = node.next;
-        }
-        return res.next;
-    }
+    // List 容器相关 ------------------------------------------------------------------------------------------------------------------- //
 
     public static List<Integer> convertToIntegerList(String s) {
+        return convertToList(s, integerConverter);
+    }
+
+    public static List<String> convertToStringList(String s) {
+        return convertToList(s, stringConverter);
+    }
+
+    @Deprecated
+    public static List<String> convertToStringList(String s, String separator) {
+        String[] arr = s.split(separator);
+        return new ArrayList<>(Arrays.asList(arr));
+    }
+
+    public static <T> List<T> convertToList(String s, Converter<T> converter) {
         String[] arr = convertToOriginStringArray(s);
-        List<Integer> res = new ArrayList<>();
+        List<T> res = new ArrayList<>();
         for(int i = 0; i < arr.length; i++) {
-            res.add(integerConverter.convertTo(arr[i]));
+            res.add(converter.convertTo(arr[i]));
         }
         return res;
     }
@@ -173,10 +162,30 @@ public class StructConvertUtils {
         return res;
     }
 
+    // ListNode 单向链表相关 ----------------------------------------------------------------------------------------------------------- //
+
+    public static ListNode convertToListNode(String s) {
+        if (NULL_STR.equals(s) || EMPTY_INT_ARRAY.equals(s)) return null;
+        return convertToListNode(convertToIntArray(s));
+    }
+
+    public static ListNode convertToListNode(int[] arr) {
+        ListNode res = new ListNode(0), node = res;
+        for (int num : arr) {
+            node.next = new ListNode(num);
+            node = node.next;
+        }
+        return res.next;
+    }
+
+    // TreeNode 二叉树相关 ------------------------------------------------------------------------------------------------------------- //
+
     // TODO 尚未实现
     public static TreeNode convertToTreeNode(String s) {
         return new TreeNode(0);
     }
+
+    // 私有方法 ------------------------------------------------------------------------------------------------------------------------ //
 
     /**
      * 仅供内部调用：此方法只做简单结构检查和切分，未做数据转换
