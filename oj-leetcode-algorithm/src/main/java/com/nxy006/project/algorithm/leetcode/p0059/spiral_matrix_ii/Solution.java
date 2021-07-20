@@ -4,7 +4,12 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 常规遍历解法
+ * 时间复杂度：O(n^2)，空间复杂度：O(1)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   37.1 MB , beats  52.38 % of java submissions.
+ * 07/20/2021 22:45
  */
 public class Solution {
     public int[][] generateMatrix(int n) {
