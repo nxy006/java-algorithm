@@ -6,9 +6,14 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import java.util.Arrays;
 
 /**
- * TODO 待提交测试
+ * 常量空间解法
+ * 时间复杂度：O(nm)，空间复杂度：O(1)
+ *
+ * Runtime  1 ms    , beats 93.84 % of java submissions.
+ * Memory   40.6 MB , beats 63.04 % of java submissions.
+ * 07/22/2021 23:51
  */
-public class Solution {
+public class ConstantSpaceSolution {
     public void setZeroes(int[][] matrix) {
         boolean rowZero = false, colZero = false;
         // Init Check
@@ -56,14 +61,14 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new Solution(), "[[1,0,1],[0,0,0],[1,0,1]]", "[[1,1,1],[1,0,1],[1,1,1]]");
-        caseCheck(new Solution(), "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]", "[[0,1,2,0],[3,4,5,2],[1,3,1,5]]");
+        caseCheck(new ConstantSpaceSolution(), "[[1,0,1],[0,0,0],[1,0,1]]", "[[1,1,1],[1,0,1],[1,1,1]]");
+        caseCheck(new ConstantSpaceSolution(), "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]", "[[0,1,2,0],[3,4,5,2],[1,3,1,5]]");
         // 官方用例
-        caseCheck(new Solution(), "[[1,2,3],[4,5,6],[7,8,9]]", "[[1,2,3],[4,5,6],[7,8,9]]");
-        caseCheck(new Solution(), "[[0,0,0],[0,0,0],[0,0,0]]", "[[0,0,0],[0,0,0],[0,0,0]]");
+        caseCheck(new ConstantSpaceSolution(), "[[1,2,3],[4,5,6],[7,8,9]]", "[[1,2,3],[4,5,6],[7,8,9]]");
+        caseCheck(new ConstantSpaceSolution(), "[[0,0,0],[0,0,0],[0,0,0]]", "[[0,0,0],[0,0,0],[0,0,0]]");
     }
 
-    private static void caseCheck(Solution solution, String expectedStr, String matrixStr) {
+    private static void caseCheck(ConstantSpaceSolution solution, String expectedStr, String matrixStr) {
         int[][] matrix = StructConvertUtils.convertToIntMatrix(matrixStr);
         solution.setZeroes(matrix);
         CaseAssertUtils.assertEquals(StructConvertUtils.convertToIntMatrix(expectedStr), matrix);
