@@ -4,7 +4,11 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 常规解法
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   37.8 MB , beats  23.22 % of java submissions.
+ * 07/22/2021 23:44
  */
 public class Solution {
     public int[] plusOne(int[] digits) {
