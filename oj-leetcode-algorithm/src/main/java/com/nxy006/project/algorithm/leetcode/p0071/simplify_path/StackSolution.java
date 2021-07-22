@@ -5,7 +5,12 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import java.util.Stack;
 
 /**
- * TODO 待提交测试
+ * 栈解法
+ * 时间复杂度：O(n)，空间复杂度：O(n)
+ *
+ * Runtime  3 ms    , beats 96.47 % of java submissions.
+ * Memory   39.2 MB , beats 54.08 % of java submissions.
+ * 07/22/2021 23:47
  */
 public class StackSolution {
     public String simplifyPath(String path) {
