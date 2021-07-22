@@ -6,9 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO 待提交测试
+ * 数学解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime  10 ms   , beats 18.54 % of java submissions.
+ * Memory   39.7 MB , beats 28.45 % of java submissions.
+ * 07/22/2021 23:37
  */
-public class Solution {
+public class MathSolution {
     private final int[]    nums   =    new int[]{1,   4,    5,   9,    10,  40,   50,  90,   100, 400,  500, 900,  1000};
     private final String[] romans = new String[]{"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M" };
     private final Map<String, Integer> romanMap = new HashMap<>();
@@ -39,10 +44,10 @@ public class Solution {
     // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
 
     public static void main(String[] args) {
-        CaseAssertUtils.assertEquals(3, new Solution().romanToInt("III"));
-        CaseAssertUtils.assertEquals(4, new Solution().romanToInt("IV"));
-        CaseAssertUtils.assertEquals(9, new Solution().romanToInt("IX"));
-        CaseAssertUtils.assertEquals(58, new Solution().romanToInt("LVIII"));
-        CaseAssertUtils.assertEquals(1994, new Solution().romanToInt("MCMXCIV"));
+        CaseAssertUtils.assertEquals(3, new MathSolution().romanToInt("III"));
+        CaseAssertUtils.assertEquals(4, new MathSolution().romanToInt("IV"));
+        CaseAssertUtils.assertEquals(9, new MathSolution().romanToInt("IX"));
+        CaseAssertUtils.assertEquals(58, new MathSolution().romanToInt("LVIII"));
+        CaseAssertUtils.assertEquals(1994, new MathSolution().romanToInt("MCMXCIV"));
     }
 }
