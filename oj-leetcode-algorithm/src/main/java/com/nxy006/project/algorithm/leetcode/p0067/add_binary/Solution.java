@@ -3,7 +3,11 @@ package com.nxy006.project.algorithm.leetcode.p0067.add_binary;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 
 /**
- * TODO 待提交测试
+ * 常规解法
+ *
+ * Runtime  2 ms    , beats 75.20 % of java submissions.
+ * Memory   38.9 MB , beats 60.22 % of java submissions.
+ * 07/22/2021 23:46
  */
 public class Solution {
     public String addBinary(String a, String b) {
