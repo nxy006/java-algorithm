@@ -153,6 +153,11 @@ public class StructConvertUtils {
         List<List<T>> res = new ArrayList<>(matrix.length);
 
         for(String[] arr : matrix) {
+            // 对类似 [[], [1]] 的输入，将第一个子列表转换为空列表
+            if (arr.length == 0 || arr.length == 1 && "".equals(arr[0])) {
+                res.add(new ArrayList<>());
+                continue;
+            }
             List<T> list = new ArrayList<>(arr.length);
             for(String str : arr) {
                 list.add(converter.convertTo(str));
