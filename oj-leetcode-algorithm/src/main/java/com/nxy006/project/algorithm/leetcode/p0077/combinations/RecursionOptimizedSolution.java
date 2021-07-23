@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 递归解法
+ * 递归解法（优化）
  * 时间复杂度：O({n, k}·k)，即 n 个数取 k 个数的组合数量乘以 k
  * 空间复杂度：O(k)，栈深度
  *
- * Runtime  20 ms   , beats 43.47 % of java submissions.
- * Memory   40.8 MB , beats 30.39 % of java submissions.
- * 07/23/2021 23:23
+ * Runtime  2 ms    , beats 91.31 % of java submissions.
+ * Memory   40.1 MB , beats 87.73 % of java submissions.
+ * 07/23/2021 23:35
  */
-public class RecursionSolution {
+public class RecursionOptimizedSolution {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
         process(n, k, res, new ArrayList<>(), 1);
@@ -26,6 +26,10 @@ public class RecursionSolution {
         if (list.size() >= k) {
             res.add(new ArrayList<>(list));
             return;
+        }
+        // 优化点：如果剩余的元素已经不足以凑足剩余的元素，直接退出
+        if (n - i + 1 < k - list.size()) {
+            return ;
         }
 
         for(; i <= n; i++) {
@@ -39,11 +43,11 @@ public class RecursionSolution {
 
     public static void main(String[] args) {
         // 官方用例
-        caseCheck(new RecursionSolution(), "[[2,4],[3,4],[2,3],[1,2],[1,3],[1,4]]", 4, 2);
-        caseCheck(new RecursionSolution(), "[[1]]", 1, 1);
+        caseCheck(new RecursionOptimizedSolution(), "[[2,4],[3,4],[2,3],[1,2],[1,3],[1,4]]", 4, 2);
+        caseCheck(new RecursionOptimizedSolution(), "[[1]]", 1, 1);
     }
 
-    private static void caseCheck(RecursionSolution solution, String expected, int n, int k) {
+    private static void caseCheck(RecursionOptimizedSolution solution, String expected, int n, int k) {
         CaseAssertUtils.assertEqualsIgnoreOrder(StructConvertUtils.convertToIntegerNestedList(expected), solution.combine(n, k));
     }
 }
