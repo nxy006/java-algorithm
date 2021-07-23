@@ -4,7 +4,14 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ * 时间复杂度：O(MN·3^L)，空间复杂度：O(L)，其中 M, N 为网格的长宽，L 为字符串长度
+ *
+ * TODO 以下解法直接使用原数组记录是否访问过，空间复杂度是否是 O(L)？
+ *
+ * Runtime  108 ms  , beats 39.60 % of java submissions.
+ * Memory   37.3 MB , beats 45.46 % of java submissions.
+ * 07/23/2021 23:39
  */
 public class RecursionSolution {
     public boolean exist(char[][] board, String word) {
