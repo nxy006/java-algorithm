@@ -4,7 +4,12 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 双指针扫描
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime  0 ms  , beats 100.00 % of java submissions.
+ * Memory   39 MB , beats  68.88 % of java submissions.
+ * 07/23/2021 23:45
  */
 public class TwoPointSolution {
     public int removeDuplicates(int[] nums) {
