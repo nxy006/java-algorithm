@@ -7,7 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ * 时间复杂度：O(2^n · n)，空间复杂度：O(n)
+ *
+ * Runtime  1 ms    , beats 57.91 % of java submissions.
+ * Memory   39.3 MB , beats 56.99 % of java submissions.
+ * 07/23/2021 23:38
  */
 public class RecursionSolution {
     public List<List<Integer>> subsets(int[] nums) {
