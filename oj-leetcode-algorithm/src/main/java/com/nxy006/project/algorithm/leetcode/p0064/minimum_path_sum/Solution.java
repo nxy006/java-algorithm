@@ -4,7 +4,12 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * TODO 待提交测试
+ * 动态规划解法
+ * 时间复杂度：O(mn)，空间复杂度：O(1)
+ *
+ * Runtime  2 ms    , beats 81.83 % of java submissions.
+ * Memory   41.3 MB , beats 97.00 % of java submissions.
+ * 07/23/2021 23:56
  */
 public class Solution {
     public int minPathSum(int[][] grid) {
