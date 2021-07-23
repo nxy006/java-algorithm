@@ -135,6 +135,10 @@ public class CaseAssertUtils {
             tempExpected = tempExpected.next;
             tempActual = tempActual.next;
         }
+        if (tempActual != null) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
         logger.info("Case PASS!");
     }
 
