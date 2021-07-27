@@ -4,16 +4,14 @@ import com.nxy006.project.alogtithm.utils.struct.ListNode;
 import com.nxy006.project.alogtithm.utils.struct.TreeNode;
 import sun.reflect.generics.tree.Tree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class StructConvertUtils {
     private static final String INT_ARRAY_CONVERT_PATTERN =
             "^\\[\\s*[-]?\\d+(\\s*,\\s*[-]?\\d+)*\\s*\\]$";
     private static final String STRING_ARRAY_CONVERT_PATTERN =
-            "^\\[\\s*\\S.*\\S(\\s*,\\s*\\S.*\\S)*\\s*\\]$";
+            "^\\[\\s*\\S.*\\S*(\\s*,\\s*\\S.*\\S)*\\s*\\]$";
     private static final String INT_MATRIX_CONVERT_PATTERN =
             "^\\[\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*](\\s*,\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*\\])*\\s*\\]$";
     private static final String STRING_MATRIX_CONVERT_PATTERN =
@@ -25,7 +23,7 @@ public class StructConvertUtils {
 
     private static final Converter<String> stringConverter = s -> s.replaceAll("(^\"|\"$)", "");
     private static final Converter<Character> characterConverter = s -> s.replaceAll("(^\"|\"$)", "").charAt(0);
-    private static final Converter<Integer> integerConverter = s -> Integer.valueOf(s.replaceAll("(^\"|\"$)", ""));
+    private static final Converter<Integer> integerConverter = s -> NULL_STR.equals(s) ? null : Integer.valueOf(s.replaceAll("(^\"|\"$)", ""));
 
     // Array 数组相关------------------------------------------------------------------------------------------------------------------- //
 
@@ -185,9 +183,35 @@ public class StructConvertUtils {
 
     // TreeNode 二叉树相关 ------------------------------------------------------------------------------------------------------------- //
 
-    // TODO 尚未实现
+    // TODO 尚未完整验证
     public static TreeNode convertToTreeNode(String s) {
-        return new TreeNode(0);
+        List<Integer> list = convertToIntegerList(s);
+        if (list.size() == 0 || list.get(0) == null) {
+            return null;
+        }
+
+        int i = 1;
+        TreeNode root = new TreeNode(list.get(0));
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while(!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node == null) {
+                continue;
+            }
+
+            Integer value;
+            if (i < list.size() && (value = list.get(i++)) != null) {
+                node.left = new TreeNode(value);
+                queue.offer(node.left);
+            }
+            if (i < list.size() && (value = list.get(i++)) != null) {
+                node.right = new TreeNode(value);
+                queue.offer(node.right);
+            }
+        }
+        return root;
     }
 
     // 私有方法 ------------------------------------------------------------------------------------------------------------------------ //

@@ -1,7 +1,41 @@
 package com.nxy006.project.algorithm.leetcode.p0094.binary_tree_inorder_traversal;
 
+import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
+import com.nxy006.project.alogtithm.utils.StructConvertUtils;
+import com.nxy006.project.alogtithm.utils.struct.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * TODO 未完成解答
+ * TODO 待提交测试
  */
 public class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        inorderTraversal(root, ans);
+        return ans;
+    }
+
+    private void inorderTraversal(TreeNode root, List<Integer> ans) {
+        if (root == null) return ;
+
+        inorderTraversal(root.left, ans);
+        ans.add(root.val);
+        inorderTraversal(root.right, ans);
+    }
+
+    // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
+
+    public static void main(String[] args) {
+        caseCheck(new Solution(), "[1,3,2]", "[1,null,2,3]");
+        caseCheck(new Solution(), "[]", "[]");
+        caseCheck(new Solution(), "[1]", "[1]");
+        caseCheck(new Solution(), "[1,2]", "[2,1]");
+        caseCheck(new Solution(), "[1,2]", "[1,null,2]");
+    }
+
+    private static void caseCheck(Solution solution, String expected, String treeStr) {
+        CaseAssertUtils.assertEquals(StructConvertUtils.convertToIntegerList(expected), solution.inorderTraversal(StructConvertUtils.convertToTreeNode(treeStr)));
+    }
 }
