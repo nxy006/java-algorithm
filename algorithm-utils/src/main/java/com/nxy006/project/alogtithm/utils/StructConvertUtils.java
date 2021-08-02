@@ -185,7 +185,10 @@ public class StructConvertUtils {
 
     // TODO 尚未完整验证
     public static TreeNode convertToTreeNode(String s) {
-        List<Integer> list = convertToIntegerList(s);
+        return convertToTreeNode(convertToIntegerList(s));
+    }
+
+    public static TreeNode convertToTreeNode(List<Integer> list ) {
         if (list.size() == 0 || list.get(0) == null) {
             return null;
         }
