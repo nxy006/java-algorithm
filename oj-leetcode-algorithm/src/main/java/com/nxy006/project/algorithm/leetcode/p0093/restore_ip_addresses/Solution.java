@@ -8,7 +8,12 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 常规解法
+ * 时间复杂度：O(3^SEG_COUNT * |s|)，空间复杂度：O(SEG_COUNT)，其中 SEG_COUNT = 4
+ *
+ * Runtime  2 ms    , beats 83.88 % of java submissions.
+ * Memory   39.4 MB , beats 41.99 % of java submissions.
+ * 08/03/2021 22:48
  */
 public class Solution {
     public List<String> restoreIpAddresses(String s) {
