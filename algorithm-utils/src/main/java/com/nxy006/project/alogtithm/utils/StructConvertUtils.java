@@ -147,6 +147,11 @@ public class StructConvertUtils {
     }
 
     public static <T> List<List<T>> convertToNestedList(String s, Converter<T> converter) {
+        // 输入 [] 时，应返回空的单层列表，而非嵌套的空列表
+        if (EMPTY_INT_ARRAY.equals(s)) {
+            return Collections.emptyList();
+        }
+
         String[][] matrix = convertToOriginStringMatrix(s);
         List<List<T>> res = new ArrayList<>(matrix.length);
 

@@ -1,6 +1,7 @@
 package com.nxy006.project.alogtithm.utils;
 
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
+import com.nxy006.project.alogtithm.utils.struct.TreeNode;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +14,7 @@ import java.util.List;
  * 用例断言工具
  */
 public class CaseAssertUtils {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger("Case-Check");
 
     public static void assertTrue(boolean condition) {
         if (!condition) {
@@ -136,6 +137,14 @@ public class CaseAssertUtils {
             tempActual = tempActual.next;
         }
         if (tempActual != null) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+        logger.info("Case PASS!");
+    }
+
+    public static <T> void assertEquals(TreeNode expected, TreeNode actual) {
+        if (expected != null && !expected.equals(actual)) {
             logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
             return ;
         }
