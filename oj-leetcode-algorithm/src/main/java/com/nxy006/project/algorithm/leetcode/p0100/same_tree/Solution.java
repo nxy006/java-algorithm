@@ -5,7 +5,12 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import com.nxy006.project.alogtithm.utils.struct.TreeNode;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ * 时间复杂度：O(n)，空间复杂度：O(log_n)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   36.5 MB , beats  35.99 % of java submissions.
+ * 08/03/2021 23:07
  */
 public class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
