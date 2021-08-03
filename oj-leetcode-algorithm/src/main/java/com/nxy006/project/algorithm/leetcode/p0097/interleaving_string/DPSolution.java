@@ -3,9 +3,14 @@ package com.nxy006.project.algorithm.leetcode.p0097.interleaving_string;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 
 /**
- * TODO 待提交测试
+ * 动态规划解法
+ * 时间复杂度：O(nm)，空间复杂度：O(nm)
+ *
+ * Runtime  7 ms    , beats 29.15 % of java submissions.
+ * Memory   37.4 MB , beats 59.49 % of java submissions.
+ * 08/03/2021 23:01
  */
-public class Solution {
+public class DPSolution {
     public boolean isInterleave(String s1, String s2, String s3) {
         if (s1.length()  + s2.length() != s3.length()) return false;
         if (s1.length() == 0 || s2.length() == 0) {
@@ -35,13 +40,13 @@ public class Solution {
 
     public static void main(String[] args) {
         // 官方用例
-        CaseAssertUtils.assertEquals(true, new Solution().isInterleave("aabcc", "dbbca", "aadbbcbcac"));
-        CaseAssertUtils.assertEquals(false, new Solution().isInterleave("aabcc", "dbbca", "aadbbbaccc"));
-        CaseAssertUtils.assertEquals(true, new Solution().isInterleave("", "", ""));
+        CaseAssertUtils.assertEquals(true, new DPSolution().isInterleave("aabcc", "dbbca", "aadbbcbcac"));
+        CaseAssertUtils.assertEquals(false, new DPSolution().isInterleave("aabcc", "dbbca", "aadbbbaccc"));
+        CaseAssertUtils.assertEquals(true, new DPSolution().isInterleave("", "", ""));
         // 自定义用例
-        CaseAssertUtils.assertEquals(true, new Solution().isInterleave("aaa", "", "aaa"));
-        CaseAssertUtils.assertEquals(true, new Solution().isInterleave("aac", "", "aac"));
-        CaseAssertUtils.assertEquals(true, new Solution().isInterleave("aaaaa", "aaaaa", "aaaaaaaaaa"));
-        CaseAssertUtils.assertEquals(false, new Solution().isInterleave("baaaa", "aaaaa", "aaaaaaaaba"));
+        CaseAssertUtils.assertEquals(true, new DPSolution().isInterleave("aaa", "", "aaa"));
+        CaseAssertUtils.assertEquals(true, new DPSolution().isInterleave("aac", "", "aac"));
+        CaseAssertUtils.assertEquals(true, new DPSolution().isInterleave("aaaaa", "aaaaa", "aaaaaaaaaa"));
+        CaseAssertUtils.assertEquals(false, new DPSolution().isInterleave("baaaa", "aaaaa", "aaaaaaaaba"));
     }
 }
