@@ -5,7 +5,12 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
 
 /**
- * TODO 待提交测试
+ * 常规解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   38.4 MB , beats  38.10 % of java submissions.
+ * 08/03/2021 22:35
  */
 public class Solution {
     public ListNode partition(ListNode head, int x) {

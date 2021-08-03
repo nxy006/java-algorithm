@@ -6,7 +6,7 @@ import com.nxy006.project.alogtithm.utils.struct.ListNode;
 
 /**
  * 常规解法
- * 时间复杂度：O(log_n)，空间复杂度：O(1)
+ * 时间复杂度：O(n)，空间复杂度：O(1)
  *
  * Runtime  0 ms    , beats 100.00 % of java submissions.
  * Memory   38.5 MB , beats  50.00 % of java submissions.
