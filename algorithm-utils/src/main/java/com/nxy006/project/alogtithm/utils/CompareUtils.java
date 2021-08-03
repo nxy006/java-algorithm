@@ -17,6 +17,7 @@ public class CompareUtils {
         return true;
     }
 
+    // TODO 此排序有疏漏，不能应对重复值，比如 [1,2,2] 与 [1,1,2] 会误判为相等
     public static <T> boolean compareIgnoreOrder(List<T> list1, List<T> list2) {
         if (list1 == null && list2 == null) return true;
         if (list1 == null || list2 == null || list1.size() != list2.size()) return false;
