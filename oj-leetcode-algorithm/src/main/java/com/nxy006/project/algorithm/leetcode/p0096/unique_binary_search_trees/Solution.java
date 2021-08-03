@@ -3,7 +3,12 @@ package com.nxy006.project.algorithm.leetcode.p0096.unique_binary_search_trees;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ * 时间复杂度：O(n^2)，空间复杂度：O(n)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   35.8 MB , beats  38.62 % of java submissions.
+ * 08/03/2021 22:57
  */
 public class Solution {
     private int[] res = new int[20];
