@@ -8,7 +8,11 @@ import javafx.util.Pair;
 import java.util.*;
 
 /**
- * TODO 待提交测试
+ * 常规解法
+ *
+ * Runtime  1 ms    , beats 92.44 % of java submissions.
+ * Memory   38.8 MB , beats 98.00 % of java submissions.
+ * 08/03/2021 22:54
  */
 public class Solution {
     private Map<Pair<Integer, Integer>, List<TreeNode>> resMap = new HashMap<>();
