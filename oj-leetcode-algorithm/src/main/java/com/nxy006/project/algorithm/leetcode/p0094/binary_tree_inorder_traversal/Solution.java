@@ -8,7 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO 待提交测试
+ * 常规解法
+ * 时间复杂度：O(n)，空间复杂度：O(n)
+ *
+ * Runtime  0 ms    , beats 100.00 % of java submissions.
+ * Memory   37.5 MB , beats  34.81 % of java submissions.
+ * 08/03/2021 22:52
  */
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
