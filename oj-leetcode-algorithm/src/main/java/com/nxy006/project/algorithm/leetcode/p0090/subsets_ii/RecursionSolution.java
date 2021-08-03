@@ -6,7 +6,12 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import java.util.*;
 
 /**
- * TODO 待提交测试
+ * 递归解法
+ * 时间复杂度：O(n*2^n)，空间复杂度：O(n)
+ *
+ * Runtime  1 ms    , beats 99.62 % of java submissions.
+ * Memory   39.1 MB , beats 72.11 % of java submissions.
+ * 08/03/2021 22:41
  */
 public class RecursionSolution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
