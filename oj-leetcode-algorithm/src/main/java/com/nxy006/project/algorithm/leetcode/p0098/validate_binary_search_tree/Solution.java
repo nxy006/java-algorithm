@@ -28,6 +28,7 @@ public class Solution {
         // 自定义用例
         caseCheck(new Solution(), true, "[5,4,null,3,null,2,null,1]");
         caseCheck(new Solution(), false, "[5,4,null,3,null,2,null,6]");
+        caseCheck(new Solution(), false, "[2,2,2]");
     }
 
     private static void caseCheck(Solution solution, boolean expected, String treeStr) {
