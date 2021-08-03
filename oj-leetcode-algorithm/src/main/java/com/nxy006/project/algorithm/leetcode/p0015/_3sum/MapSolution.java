@@ -6,7 +6,12 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import java.util.*;
 
 /**
- * TODO 待提交测试
+ * Map 解法
+ * 时间复杂度：O(n^2)，空间复杂度：O(n)
+ *
+ * Runtime  619 ms  , beats 13.48 % of java submissions.
+ * Memory   45.9 MB , beats 16.43 % of java submissions.
+ * 08/03/2021 22:26
  */
 public class MapSolution {
     public List<List<Integer>> threeSum(int[] nums) {
