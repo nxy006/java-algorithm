@@ -9,12 +9,12 @@ import com.nxy006.project.alogtithm.utils.struct.TreeNode;
  */
 public class Solution {
     public boolean isValidBST(TreeNode root) {
-        return validBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return validBST(root, null, null);
     }
 
-    private boolean validBST(TreeNode root, int min, int max) {
+    private boolean validBST(TreeNode root, Integer min, Integer max) {
         if (root == null) return true;
-        if (root.val <= min || root.val >= max) return false;
+        if (min != null && root.val <= min || max != null && root.val >= max) return false;
 
         return validBST(root.left, min, root.val) && validBST(root.right, root.val, max);
     }
@@ -29,6 +29,7 @@ public class Solution {
         caseCheck(new Solution(), true, "[5,4,null,3,null,2,null,1]");
         caseCheck(new Solution(), false, "[5,4,null,3,null,2,null,6]");
         caseCheck(new Solution(), false, "[2,2,2]");
+        caseCheck(new Solution(), false, "[-2147483648,-2147483648,null]");
     }
 
     private static void caseCheck(Solution solution, boolean expected, String treeStr) {
