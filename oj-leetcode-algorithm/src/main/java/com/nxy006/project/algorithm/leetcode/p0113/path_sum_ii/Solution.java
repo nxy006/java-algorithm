@@ -56,8 +56,8 @@ class Solution {
     public static void main(String[] args) {
         // 官方用例
         caseCheck(new Solution(), "[[5,4,11,2],[5,8,4,5]]", "[5,4,8,11,null,13,4,7,2,null,null,5,1]", 22);
-        caseCheck(new Solution(), "[]", "[1,2,3]", 3);
-        caseCheck(new Solution(), "[]", "[1,2]", 5);
+        caseCheck(new Solution(), "[]", "[1,2,3]", 5);
+        caseCheck(new Solution(), "[]", "[1,2]", 0);
         // 自定义用例
         caseCheck(new Solution(), "[[1]]", "[1]", 1);
     }
