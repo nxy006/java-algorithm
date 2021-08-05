@@ -8,6 +8,11 @@ import java.util.List;
 
 /**
  * 递归枚举解法：递归尝试所有可用的组合顺序
+ * 时间复杂度：O(4^n/sqrt(n)），空间复杂度：O(4^n/sqrt(n)）
+ *
+ * Runtime  0 ms  , beats 100.00 % of java submissions.
+ * Memory   39 MB , beats  69.67 % of java submissions.
+ * 06/17/2021 11:03
  */
 class Solution {
     List<String> ans = new ArrayList<>();

@@ -1,5 +1,7 @@
-# 22. Generate Parentheses
+# 22. Generate Parentheses `Medium`
 
+- **Origin Link**: [https://leetcode.com/problems/generate-parentheses/](https://leetcode.com/problems/generate-parentheses/)
+- **Tag**: `String`, `Dynamic Programming`, `Backtracking`
 
 ## Description
 
