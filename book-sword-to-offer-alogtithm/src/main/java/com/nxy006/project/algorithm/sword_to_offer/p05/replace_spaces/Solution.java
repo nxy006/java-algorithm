@@ -9,6 +9,8 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
  *       则输出“We%20are%20happy.”。
  * 官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/05_ReplaceSpaces
  *
+ * 注：这道题实际是 C 语言题目，考察做 char[] 操作，强调替换时从后向前替换，避免多次移动字符串数据。
+ *
  * LeetCode-CN 解答：
  * Link：https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/
  * 执行用时：0 ms,    在所有 Java 提交中击败了 100.00 % 的用户
