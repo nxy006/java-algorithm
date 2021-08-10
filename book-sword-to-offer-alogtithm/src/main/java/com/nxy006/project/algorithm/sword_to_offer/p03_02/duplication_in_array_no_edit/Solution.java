@@ -63,6 +63,6 @@ public class Solution {
     private static void caseCheck(Solution solution, String expected, String arrStr) {
         CaseAssertUtils.assertContains(
                 StructConvertUtils.convertToIntArray(expected),
-                new Solution().findRepeatNumber(StructConvertUtils.convertToIntArray(arrStr)));
+                solution.findRepeatNumber(StructConvertUtils.convertToIntArray(arrStr)));
     }
 }
