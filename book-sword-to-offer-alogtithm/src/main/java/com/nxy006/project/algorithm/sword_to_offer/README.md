@@ -1,44 +1,57 @@
 # 「剑指Offer —— 名企面试官精讲典型编程题 第 2 版」
 
+## 书籍介绍
 
-## 说明
+![](./book-sword_to_offer.jpg)
+
+- **书籍名称：** 剑指Offer：名企面试官精讲典型编程题（第2版）
+- **书籍介绍：** https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=49304
+- **出版时间：** 2017-03
+- **ISBN：** 9787121310928
 
 
 ## 题目列表
 
 ### 面试题 1：赋值运算符函数
 
-题目：如下为类型CMyString的声明，请为该类型添加赋值运算符函数。
+**题目：** 如下为类型CMyString的声明，请为该类型添加赋值运算符函数。
 
 **官解：** https://github.com/zhedahht/CodingInterviewChinese2/tree/master/01_AssignmentOperator
 
+
 ### 面试题 2：实现Singleton模式
 
-题目：设计一个类，我们只能生成该类的一个实例。
+**题目：** 设计一个类，我们只能生成该类的一个实例。
 
-官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/02_Singleton
+**官解：** https://github.com/zhedahht/CodingInterviewChinese2/tree/master/02_Singleton
+
 
 ### 面试题 3：找出数组中重复的数字
 
-- 题目一：找出数组中重复的数字
-  - 题目：在一个长度为n的数组里的所有数字都在0到n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，那么对应的输出是重复的数字2或者3。
-  - 官解：https://github.com/zhedahht/CodingInterviewChinese2/blob/master/03_01_DuplicationInArray
+**题目一：找出数组中重复的数字**
 
-- 题目二：不修改数组找出重复的数字
-  - 题目：在一个长度为n+1的数组里的所有数字都在1到n的范围内，所以数组中至少有一个数字是重复的。请找出数组中任意一个重复的数字，但不能修改输入的数组。例如，如果输入长度为8的数组{2, 3, 5, 4, 3, 2, 6, 7}，那么对应的输出是重复的数字2或者3。
-  - 官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/03_02_DuplicationInArrayNoEdit
+- 题目：在一个长度为n的数组里的所有数字都在0到n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，那么对应的输出是重复的数字2或者3。
+- 官解：https://github.com/zhedahht/CodingInterviewChinese2/blob/master/03_01_DuplicationInArray
+
+**题目二：不修改数组找出重复的数字**
+
+- 题目：在一个长度为n+1的数组里的所有数字都在1到n的范围内，所以数组中至少有一个数字是重复的。请找出数组中任意一个重复的数字，但不能修改输入的数组。例如，如果输入长度为8的数组{2, 3, 5, 4, 3, 2, 6, 7}，那么对应的输出是重复的数字2或者3。
+- 官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/03_02_DuplicationInArrayNoEdit
+
 
 ### 面试题 4：二维数组中的查找
 
-题目：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+**题目：** 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
 
-官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/04_FindInPartiallySortedMatrix
+**官解：** https://github.com/zhedahht/CodingInterviewChinese2/tree/master/04_FindInPartiallySortedMatrix
+
 
 ### 面试题 5：替换空格
 
-题目：请实现一个函数，把字符串中的每个空格替换成"%20"。例如输入“We are happy.”，则输出“We%20are%20happy.”。
+**题目：** 请实现一个函数，把字符串中的每个空格替换成"%20"。例如输入“We are happy.”，则输出“We%20are%20happy.”。
 
-官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/05_ReplaceSpaces
+**官解：** https://github.com/zhedahht/CodingInterviewChinese2/tree/master/05_ReplaceSpaces
+
 
 ### 面试题 6：从尾到头打印链表
 
@@ -46,17 +59,19 @@
 
 **官解：** https://github.com/zhedahht/CodingInterviewChinese2/blob/master/06_PrintListInReversedOrder
 
+
 ### 面试题 7：重建二叉树
 
-题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2, 4, 7, 3, 5, 6, 8}和中序遍历序列{4, 7, 2, 1, 5, 3, 8, 6}，则重建出图2.6所示的二叉树并输出它的头结点。
+**题目：** 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2, 4, 7, 3, 5, 6, 8}和中序遍历序列{4, 7, 2, 1, 5, 3, 8, 6}，则重建出图2.6所示的二叉树并输出它的头结点。
 
-官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/07_ConstructBinaryTree
+**官解：** https://github.com/zhedahht/CodingInterviewChinese2/tree/master/07_ConstructBinaryTree
+
 
 ### 面试题8：二叉树的下一个结点
 
-题目：给定一棵二叉树和其中的一个结点，如何找出中序遍历顺序的下一个结点？树中的结点除了有两个分别指向左右子结点的指针以外，还有一个指向父结点的指针。
+**题目：** 给定一棵二叉树和其中的一个结点，如何找出中序遍历顺序的下一个结点？树中的结点除了有两个分别指向左右子结点的指针以外，还有一个指向父结点的指针。
 
-官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/08_NextNodeInBinaryTrees
+**官解：** https://github.com/zhedahht/CodingInterviewChinese2/tree/master/08_NextNodeInBinaryTrees
 
 
 ### 面试题 9：用两个栈实现队列
@@ -66,8 +81,9 @@
 
 ### 面试题 10：斐波那契数列
 
-- **题目一：** 写一个函数，输入 n，求斐波那契（Fibonacci）数列的第 `n` 项。
-- **题目二：** 一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+**题目一：** 写一个函数，输入 n，求斐波那契（Fibonacci）数列的第 `n` 项。
+
+**题目二：** 一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
 
 **官解：** https://github.com/zhedahht/CodingInterviewChinese2/tree/master/10_Fibonacci
 
