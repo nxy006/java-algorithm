@@ -13,7 +13,7 @@ public class StructConvertUtils {
     private static final String STRING_ARRAY_CONVERT_PATTERN =
             "^\\[\\s*\\S.*\\S*(\\s*,\\s*\\S.*\\S)*\\s*\\]$";
     private static final String INT_MATRIX_CONVERT_PATTERN =
-            "^\\[\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*](\\s*,\\s*\\[\\s*\\d+(\\s*,\\s*\\d+)*\\s*\\])*\\s*\\]$";
+            "^\\[\\s*\\[\\s*-?\\d+(\\s*,\\s*-?\\d+)*\\s*](\\s*,\\s*\\[\\s*-?\\d+(\\s*,\\s*-?\\d+)*\\s*\\])*\\s*\\]$";
     private static final String STRING_MATRIX_CONVERT_PATTERN =
             "^\\[\\s*\\[\\s*\\S(.*\\S)*(\\s*,\\s*\\S(.*\\S)*)*\\s*](\\s*,\\s*\\[\\s*\\S(.*\\S)*(\\s*,\\s*\\S(.*\\S)*)*\\s*\\])*\\s*\\]$";
 
