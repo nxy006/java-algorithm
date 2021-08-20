@@ -11,7 +11,11 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
  *       但它不能进入方格(35, 38)，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
  * 官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/13_RobotMove
  *
- * TODO 待提交测试
+ * LeetCode-CN 解答：
+ * Link：https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/
+ * 执行用时：0 ms,    在所有 Java 提交中击败了 100.00 % 的用户
+ * 内存消耗：35.2 MB, 在所有 Java 提交中击败了  83.10 % 的用户
+ * 2021/08/20 14:26
  */
 public class Solution {
     public int movingCount(int m, int n, int k) {
@@ -38,7 +42,18 @@ public class Solution {
     // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
 
     public static void main(String[] args) {
+        // Leetcode-CN 题目示例
         CaseAssertUtils.assertEquals(3, new Solution().movingCount(2, 3, 1));
         CaseAssertUtils.assertEquals(1, new Solution().movingCount(3, 1, 0));
+        // 书籍用例
+        CaseAssertUtils.assertEquals(21, new Solution().movingCount(10, 10, 5));
+        CaseAssertUtils.assertEquals(359, new Solution().movingCount(20, 20, 15));
+        CaseAssertUtils.assertEquals(29, new Solution().movingCount(1, 100, 10));
+        CaseAssertUtils.assertEquals(10, new Solution().movingCount(1, 10, 10));
+        CaseAssertUtils.assertEquals(79, new Solution().movingCount(100, 1, 15));
+        CaseAssertUtils.assertEquals(10, new Solution().movingCount(10, 1, 15));
+        CaseAssertUtils.assertEquals(1, new Solution().movingCount(1, 1, 15));
+        CaseAssertUtils.assertEquals(1, new Solution().movingCount(1, 1, 0));
+        CaseAssertUtils.assertEquals(0, new Solution().movingCount(10, 10, -10));
     }
 }
