@@ -14,7 +14,11 @@ import com.nxy006.project.alogtithm.utils.StructConvertUtils;
  *       J D E H
  * 官解：https://github.com/zhedahht/CodingInterviewChinese2/blob/master/12_StringPathInMatrix
  *
- * TODO 未提交测试
+ * LeetCode-CN 解答：
+ * Link：https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
+ * 执行用时：6 ms,     在所有 Java 提交中击败了 49.79 % 的用户
+ * 内存消耗：40。1 MB, 在所有 Java 提交中击败了 59.60 % 的用户
+ * 2021/08/20 14:11
  */
 public class Solution {
     public boolean exist(char[][] board, String word) {
@@ -49,17 +53,58 @@ public class Solution {
         return false;
     }
 
-    // TODO 临时借用 LeetCode 79 用例
+    // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
+
     public static void main(String[] args) {
-        // 官方用例
-        caseCheck(new Solution(), true, "[[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]]", "ABCCED");
-        caseCheck(new Solution(), true, "[[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]]", "SEE");
-        caseCheck(new Solution(), false, "[[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]]", "ABCB");
-        // 自定义用例
-        caseCheck(new Solution(), true, "[[\"A\",\"A\",\"A\",\"A\"],[\"A\",\"A\",\"A\",\"A\"]]", "AAAAAAAA");
-        caseCheck(new Solution(), false, "[[\"A\",\"A\",\"A\",\"A\"],[\"A\",\"A\",\"A\",\"A\"]]", "AAAAAAAAA");
-        caseCheck(new Solution(), false, "[[\"A\",\"A\",\"A\",\"A\"],[\"A\",\"A\",\"A\",\"A\"]]", "AAAAAAAB");
-        caseCheck(new Solution(), false, "[[\"A\",\"A\",\"B\",\"C\"],[\"A\",\"A\",\"B\",\"C\"]]", "AAAC");
+        // Leetcode-CN 题目示例
+        caseCheck(new Solution(), true,
+                "[[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]]", "ABCCED");
+        caseCheck(new Solution(), false, "[[\"a\",\"b\"],[\"c\",\"d\"]]", "abcd");
+        // 书籍用例（省略用例12. 传入 null）
+        caseCheck(new Solution(), true,
+                "[[\"A\", \"B\", \"T\", \"G\"]," +
+                        " [\"C\", \"F\", \"C\", \"S\"]," +
+                        " [\"J\", \"D\", \"E\", \"H\"]]", "BFCE");
+        caseCheck(new Solution(), true,
+                "[[\"A\", \"B\", \"C\", \"E\"]," +
+                        " [\"S\", \"F\", \"C\", \"S\"]," +
+                        " [\"A\", \"D\", \"E\", \"E\"]]", "SEE");
+        caseCheck(new Solution(), false,
+                "[[\"A\", \"B\", \"T\", \"G\"]," +
+                        " [\"C\", \"F\", \"C\", \"S\"]," +
+                        " [\"J\", \"D\", \"E\", \"H\"]]", "ABFB");
+        caseCheck(new Solution(), true,
+                "[[\"A\", \"B\", \"C\", \"E\", \"H\", \"J\", \"I\", \"G\"]," +
+                        " [\"S\", \"F\", \"C\", \"S\", \"L\", \"O\", \"P\", \"Q\"]," +
+                        " [\"A\", \"D\", \"E\", \"E\", \"M\", \"N\", \"O\", \"E\"]," +
+                        " [\"A\", \"D\", \"I\", \"D\", \"E\", \"J\", \"F\", \"M\"]," +
+                        " [\"V\", \"C\", \"E\", \"I\", \"F\", \"G\", \"G\", \"S\"]]", "SLHECCEIDEJFGGFIE");
+        caseCheck(new Solution(), true,
+                "[[\"A\", \"B\", \"C\", \"E\", \"H\", \"J\", \"I\", \"G\"]," +
+                        " [\"S\", \"F\", \"C\", \"S\", \"L\", \"O\", \"P\", \"Q\"]," +
+                        " [\"A\", \"D\", \"E\", \"E\", \"M\", \"N\", \"O\", \"E\"]," +
+                        " [\"A\", \"D\", \"I\", \"D\", \"E\", \"J\", \"F\", \"M\"]," +
+                        " [\"V\", \"C\", \"E\", \"I\", \"F\", \"G\", \"G\", \"S\"]]", "SGGFIECVAASABCEHJIGQEM");
+        caseCheck(new Solution(), false,
+                "[[\"A\", \"B\", \"C\", \"E\", \"H\", \"J\", \"I\", \"G\"]," +
+                        " [\"S\", \"F\", \"C\", \"S\", \"L\", \"O\", \"P\", \"Q\"]," +
+                        " [\"A\", \"D\", \"E\", \"E\", \"M\", \"N\", \"O\", \"E\"]," +
+                        " [\"A\", \"D\", \"I\", \"D\", \"E\", \"J\", \"F\", \"M\"]," +
+                        " [\"V\", \"C\", \"E\", \"I\", \"F\", \"G\", \"G\", \"S\"]]", "SGGFIECVAASABCEEJIGOEM");
+        caseCheck(new Solution(), false,
+                "[[\"A\", \"B\", \"C\", \"E\", \"H\", \"J\", \"I\", \"G\"]," +
+                        " [\"S\", \"F\", \"C\", \"S\", \"L\", \"O\", \"P\", \"Q\"]," +
+                        " [\"A\", \"D\", \"E\", \"E\", \"M\", \"N\", \"O\", \"E\"]," +
+                        " [\"A\", \"D\", \"I\", \"D\", \"E\", \"J\", \"F\", \"M\"]," +
+                        " [\"V\", \"C\", \"E\", \"I\", \"F\", \"G\", \"G\", \"S\"]]", "SGGFIECVAASABCEHJIGQEMS");
+        caseCheck(new Solution(), true,
+                "[[\"A\", \"A\", \"A\", \"A\"],[\"A\", \"A\", \"A\", \"A\"],[\"A\", \"A\", \"A\", \"A\"]]", "AAAAAAAAAAAA");
+        caseCheck(new Solution(), false,
+                "[[\"A\", \"A\", \"A\", \"A\"],[\"A\", \"A\", \"A\", \"A\"],[\"A\", \"A\", \"A\", \"A\"]]", "AAAAAAAAAAAAA");
+        caseCheck(new Solution(), true,
+                "[[\"A\"]]", "A");
+        caseCheck(new Solution(), false,
+                "[[\"A\"]]", "B");
     }
 
     private static void caseCheck(Solution solution, boolean expected, String boardStr, String word) {
