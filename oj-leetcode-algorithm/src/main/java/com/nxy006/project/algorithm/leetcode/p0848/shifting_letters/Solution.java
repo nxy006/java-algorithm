@@ -3,6 +3,13 @@ package com.nxy006.project.algorithm.leetcode.p0848.shifting_letters;
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
+/**
+ * 常规解法
+ *
+ * Runtime  19 ms   , beats 22.68 % of java submissions.
+ * Memory   97.6 MB , beats 11.90 % of java submissions.
+ * 09/08/2021 22:23
+ */
 public class Solution {
     public String shiftingLetters(String s, int[] shifts) {
         char[] arr = s.toCharArray();
