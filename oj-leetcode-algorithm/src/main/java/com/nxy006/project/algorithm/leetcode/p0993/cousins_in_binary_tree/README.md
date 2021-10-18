@@ -1,7 +1,7 @@
 # 993. Cousins in Binary Tree `Easy`
 
-**Origin Link**: [https://leetcode.com/problems/cousins-in-binary-tree/](https://leetcode.com/problems/cousins-in-binary-tree/)
-**Tag**: `Tree`, `Depth-First Search`, `Breadth-First Search`, `Binary Tree`
+- **Origin Link**: [https://leetcode.com/problems/cousins-in-binary-tree/](https://leetcode.com/problems/cousins-in-binary-tree/)
+- **Tag**: `Tree`, `Depth-First Search`, `Breadth-First Search`, `Binary Tree`
 
 
 ## Description
