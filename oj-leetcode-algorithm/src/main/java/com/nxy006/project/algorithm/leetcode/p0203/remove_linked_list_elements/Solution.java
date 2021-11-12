@@ -4,6 +4,14 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
 
+/**
+ * 常规解法
+ * 时间复杂度：O(n)，空间复杂度：O(1)
+ *
+ * Runtime 1 ms    , beats 79.34 % of java submissions.
+ * Memory  39.9 MB , beats 63.59 % of java submissions.
+ * 11/13/2021 00:03
+ */
 public class Solution {
     public ListNode removeElements(ListNode head, int val) {
         ListNode newHead = new ListNode(0);
