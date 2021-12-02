@@ -29,7 +29,8 @@
 |  8   | String to Integer (atoi) `Medium`                       | 字符串，数学 | 22.56 %  | 12.20 %  | :warning: 需优化 |
 |  9   | Palindrome Number `Easy`                                | 字符串，数学 | 42.07 %  | 73.53 %  | :warning: 需优化 |
 |  10  | Regular Expression Matching `Hard`                      |    字符串    |  5.04 %  | 95.68 %  | :warning: 需优化 |
-|  198 | [House Robber](./p0198/house_robber) `Medium`                                   |     数组    | 100.00 % |  74.44 % | :heavy_check_mark: 已通过    |
+|  198 | [House Robber](./p0198/house_robber) `Medium`           |     数组    | 100.00 % |  74.44 % | :heavy_check_mark: 已通过    |
+|  328 | [Odd Even Linked List](./p0328/odd_even_linked_list) `Medium` |     链表    | 100.00 % |  73.35 % | :heavy_check_mark: 已通过    |
 |  450 | Delete Node in a BST `Medium`                           | 二叉树，BST  |  6.93 %  |  8.46 %  | :warning: 需优化 |
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
 |  986 | Interval List Intersections `Medium`                    |     数组    |  14.52 % |  27.67 % | :warning: 需优化 |
