@@ -36,4 +36,5 @@
 |  450 | Delete Node in a BST `Medium`                           | 二叉树，BST  |  6.93 %  |  8.46 %  | :warning: 需优化 |
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
 |  986 | Interval List Intersections `Medium`                    |     数组    |  14.52 % |  27.67 % | :warning: 需优化 |
+| 1217 | [Minimum Cost to Move Chips to The Same Position](./p1217/minimum_cost_to_move_chips_to_the_same_position/) `Easy`  |   数组，数学  | 100.00 % |  89.87 % | :star: 已完成    |
 
