@@ -37,4 +37,6 @@
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
 |  986 | Interval List Intersections `Medium`                    |     数组    |  14.52 % |  27.67 % | :warning: 需优化 |
 | 1217 | [Minimum Cost to Move Chips to The Same Position](./p1217/minimum_cost_to_move_chips_to_the_same_position/) `Easy`  |   数组，数学  | 100.00 % |  89.87 % | :star: 已完成    |
+| 1290 | [Convert Binary Number in a Linked List to Integer](./p1290/convert_binary_number_in_a_linked_list_to_integer/) `Easy` |  数组，数学  | 100.00 % | 96.50 %  | :star: 已完成    |
+
 
