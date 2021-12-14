@@ -36,6 +36,7 @@
 |  450 | Delete Node in a BST `Medium`                           | 二叉树，BST  |  6.93 %  |  8.46 %  | :warning: 需优化 |
 |  563 | [Binary Tree Tilt](./p0563/binary_tree_tilt/) `Easy`    |   二叉树     | 100.00 % | 83.37 %  | :star2: 完美    |
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
+|  938 | [Range Sum of BST](./p0938/range_sum_of_bst/) `Easy`    | 二叉树，BST  | 100.00 % | 88.01 %  | :star2: 完美    |
 |  986 | Interval List Intersections `Medium`                    |     数组    |  14.52 % |  27.67 % | :warning: 需优化 |
 | 1217 | [Minimum Cost to Move Chips to The Same Position](./p1217/minimum_cost_to_move_chips_to_the_same_position/) `Easy`  |   数组，数学  | 100.00 % |  89.87 % | :star: 已完成    |
 | 1290 | [Convert Binary Number in a Linked List to Integer](./p1290/convert_binary_number_in_a_linked_list_to_integer/) `Easy` |  数组，数学  | 100.00 % | 96.50 %  | :star: 已完成    |
