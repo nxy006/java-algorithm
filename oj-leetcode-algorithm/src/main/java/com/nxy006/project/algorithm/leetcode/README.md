@@ -35,6 +35,7 @@
 |  310 | [Minimum Height Trees](./p0310/minimum_height_trees/) `Medium` |     树       |  5.04 %  | 17.30 %  | :warning: 需优化 |
 |  328 | [Odd Even Linked List](./p0328/odd_even_linked_list) `Medium` |     链表    | 100.00 % |  73.35 % | :heavy_check_mark: 已通过    |
 |  337 | [House Robber III](./p0337/house_robber_iii/) `Medium`  |   二叉树     | 58.80 %  | 42.98 %  | :warning: 需优化 |
+|  394 | [Decode String](./p0394/decode_string/) `Medium`        |    字符串    | 100.00 % |  85.43 % | :star: 已完成    |
 |  450 | Delete Node in a BST `Medium`                           | 二叉树，BST  |  6.93 %  |  8.46 %  | :warning: 需优化 |
 |  563 | [Binary Tree Tilt](./p0563/binary_tree_tilt/) `Easy`    |   二叉树     | 100.00 % | 83.37 %  | :star2: 完美    |
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
