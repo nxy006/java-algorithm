@@ -32,6 +32,7 @@
 |  147 | [Insertion Sort List](./p0147/insertion_sort_list/) `Medium` |  链表，排序   | 41.14 %  | 90.41 %  | :warning: 需优化 |
 |  152 | [Maximum Product Subarray](./p0152/maximum_product_subarray/) `Medium` | 数组，动态规划 | 92.76 %  | 94.18 %  | :star: 已完成    |
 |  198 | [House Robber](./p0198/house_robber) `Medium`           |     数组    | 100.00 % |  74.44 % | :heavy_check_mark: 已通过    |
+|  231 | [Power of Two](./p0231/power_of_two/) `Easy`            |     数学     |  99.97 % |  89.66 % | :star: 已完成    |
 |  310 | [Minimum Height Trees](./p0310/minimum_height_trees/) `Medium` |     树       |  5.04 %  | 17.30 %  | :warning: 需优化 |
 |  328 | [Odd Even Linked List](./p0328/odd_even_linked_list) `Medium` |     链表    | 100.00 % |  73.35 % | :heavy_check_mark: 已通过    |
 |  337 | [House Robber III](./p0337/house_robber_iii/) `Medium`  |   二叉树     | 58.80 %  | 42.98 %  | :warning: 需优化 |
