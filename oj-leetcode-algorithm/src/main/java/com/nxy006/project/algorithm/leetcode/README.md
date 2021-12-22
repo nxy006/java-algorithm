@@ -29,6 +29,7 @@
 |  8   | String to Integer (atoi) `Medium`                       | 字符串，数学 | 22.56 %  | 12.20 %  | :warning: 需优化 |
 |  9   | Palindrome Number `Easy`                                | 字符串，数学 | 42.07 %  | 73.53 %  | :warning: 需优化 |
 |  10  | Regular Expression Matching `Hard`                      |    字符串    |  5.04 %  | 95.68 %  | :warning: 需优化 |
+|  143 | [Reorder List](./p0143/reorder_list/) `Medium`          |     链表     | 99.88 %  | 91.19 %  | :star: 已完成    |
 |  147 | [Insertion Sort List](./p0147/insertion_sort_list/) `Medium` |  链表，排序   | 41.14 %  | 90.41 %  | :warning: 需优化 |
 |  152 | [Maximum Product Subarray](./p0152/maximum_product_subarray/) `Medium` | 数组，动态规划 | 92.76 %  | 94.18 %  | :star: 已完成    |
 |  198 | [House Robber](./p0198/house_robber) `Medium`           |     数组    | 100.00 % |  74.44 % | :heavy_check_mark: 已通过    |
