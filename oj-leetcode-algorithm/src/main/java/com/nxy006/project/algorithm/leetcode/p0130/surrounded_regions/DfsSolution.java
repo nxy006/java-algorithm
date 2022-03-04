@@ -1,4 +1,4 @@
-package com.nxy006.project.algorithm.leetcode.P0130.surrounded_regions;
+package com.nxy006.project.algorithm.leetcode.p0130.surrounded_regions;
 
 import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
