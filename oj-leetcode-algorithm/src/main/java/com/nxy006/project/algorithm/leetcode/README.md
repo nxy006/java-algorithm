@@ -29,6 +29,7 @@
 |  8   | String to Integer (atoi) `Medium`                       | 字符串，数学 | 22.56 %  | 12.20 %  | :warning: 需优化 |
 |  9   | Palindrome Number `Easy`                                | 字符串，数学 | 42.07 %  | 73.53 %  | :warning: 需优化 |
 |  10  | Regular Expression Matching `Hard`                      |    字符串    |  5.04 %  | 95.68 %  | :warning: 需优化 |
+|  121 | [Best Time to Buy and Sell Stock](./p0121/best_time_to_buy_and_sell_stock/) `Easy` |     数组    |  87.02 % |  69.37 % | :heavy_check_mark: 已通过    |
 |  143 | [Reorder List](./p0143/reorder_list/) `Medium`          |     链表     | 99.88 %  | 91.19 %  | :star: 已完成    |
 |  147 | [Insertion Sort List](./p0147/insertion_sort_list/) `Medium` |  链表，排序   | 41.14 %  | 90.41 %  | :warning: 需优化 |
 |  152 | [Maximum Product Subarray](./p0152/maximum_product_subarray/) `Medium` | 数组，动态规划 | 92.76 %  | 94.18 %  | :star: 已完成    |
