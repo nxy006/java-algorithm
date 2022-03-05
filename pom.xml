@@ -13,6 +13,7 @@
         <module>algorithm-utils</module>
         <module>book-sword-to-offer-alogtithm</module>
         <module>algorithm-template</module>
+        <module>book-algorithm-problem-solving-strategies</module>
     </modules>
 
     <dependencies>

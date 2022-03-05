@@ -1,12 +1,5 @@
 package com.nxy006.project.algorithm_problem_solving_strategies.p24_2.morddr;
 
-import com.nxy006.project.alogtithm.utils.model.TextInputAssertSolution;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-import java.net.URL;
 import java.util.Scanner;
 
 public class Solution {
