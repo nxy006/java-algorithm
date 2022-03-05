@@ -117,6 +117,18 @@ public class CaseAssertUtils {
         logger.info("Case PASS!");
     }
 
+    public static void assertContains(Collection<TreeNode> expecteds, TreeNode actual) {
+        if (!expecteds.contains(actual)) {
+            logger.error("Case Failed! Expected: {} but was: {}", expecteds, actual);
+            return ;
+        }
+        logger.info("Case PASS!");
+    }
+
+    public static void assertContains(TreeNode[] expecteds, TreeNode actual) {
+        assertContains(new ArrayList<>(Arrays.asList(expecteds)), actual);
+    }
+
     public static void assertContains(String[] expecteds, String actual) {
         assertContains(new ArrayList<>(Arrays.asList(expecteds)), actual);
     }

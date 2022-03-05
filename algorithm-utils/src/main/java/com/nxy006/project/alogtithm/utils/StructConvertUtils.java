@@ -193,6 +193,14 @@ public class StructConvertUtils {
         return convertToTreeNode(convertToIntegerList(s));
     }
 
+    public static TreeNode[] convertToTreeNodeArr(String[] arr) {
+        TreeNode[] res = new TreeNode[arr.length];
+        for(int i = 0; i < arr.length; i++) {
+            res[i] = convertToTreeNode(convertToIntegerList(arr[i]));
+        }
+        return res;
+    }
+
     public static TreeNode convertToTreeNode(List<Integer> list ) {
         if (list.size() == 0 || list.get(0) == null) {
             return null;
