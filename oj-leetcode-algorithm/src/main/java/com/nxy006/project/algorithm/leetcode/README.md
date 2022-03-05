@@ -42,6 +42,7 @@
 |  394 | [Decode String](./p0394/decode_string/) `Medium`        |    字符串    | 100.00 % |  85.43 % | :star: 已完成    |
 |  450 | Delete Node in a BST `Medium`                           | 二叉树，BST  |  6.93 %  |  8.46 %  | :warning: 需优化 |
 |  563 | [Binary Tree Tilt](./p0563/binary_tree_tilt/) `Easy`    |   二叉树     | 100.00 % | 83.37 %  | :star2: 完美    |
+|  740 | [Delete and Earn](./p0740/delete_and_earn/) `Medium`    |     数组    |  71.72 % |  75.89 % | :heavy_check_mark: 已通过    |
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
 |  799 | [Champagne Tower](./p0799/champagne_tower/) `Medium`    |   动态规划   |  40.64 % |  38.81 % | :warning: 需优化 |
 |  938 | [Range Sum of BST](./p0938/range_sum_of_bst/) `Easy`    | 二叉树，BST  | 100.00 % | 88.01 %  | :star2: 完美    |
