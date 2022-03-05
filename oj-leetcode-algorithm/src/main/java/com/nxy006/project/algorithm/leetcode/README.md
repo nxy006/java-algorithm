@@ -17,18 +17,28 @@
 - :star2: 完美，已完成所有解答（复杂数学原理的解法可省略），且至少一个解答时间空间均超过 85%
 
 
-| 题号 | 题目名称                                                |    关键字    | 时间比率 | 空间比率 |       进度       |
+| 题号  | 题目名称                                                 |    关键字    | 时间比率 | 空间比率 |       进度       |
 | :--: | :------------------------------------------------------ | :----------: | :------: | :------: | :--------------: |
-|  1   | Two Sum `Easy`                                          |  数组、Map   | 58.77 %  | 22.34 %  | :warning: 需优化 |
-|  2   | Add Two Numbers `Medium`                                |     链表     | 69.58 %  | 37.97 %  | :warning: 需优化 |
-|  3   | Longest Substring Without Repeating Characters `Medium` |    字符串    | 89.50 %  | 85.98 %  | :star: 已完成    |
-|  4   | Median of Two Sorted Arrays `Hard`                      |  数组，数学  | 99.88 %  | 40.07 %  | :warning: 需优化 |
-|  5   | Longest Palindromic Substring `Medium`                  |    字符串    | 46.04 %  | 79.84 %  | :warning: 需优化 |
-|  6   | ZigZag Conversion `Medium`                              |    字符串    |  9.30 %  | 99.52 %  | :warning: 需优化 |
-|  7   | Reverse Integer `Easy`                                  |     数学     | 100.00 % | 32.12 %  | :warning: 需优化 |
-|  8   | String to Integer (atoi) `Medium`                       | 字符串，数学 | 22.56 %  | 12.20 %  | :warning: 需优化 |
-|  9   | Palindrome Number `Easy`                                | 字符串，数学 | 42.07 %  | 73.53 %  | :warning: 需优化 |
-|  10  | Regular Expression Matching `Hard`                      |    字符串    |  5.04 %  | 95.68 %  | :warning: 需优化 |
+|    1 | Two Sum `Easy`                                          |  数组、Map   | 58.77 %  | 22.34 %  | :warning: 需优化 |
+|    2 | Add Two Numbers `Medium`                                |     链表     | 69.58 %  | 37.97 %  | :warning: 需优化 |
+|    3 | Longest Substring Without Repeating Characters `Medium` |    字符串    | 89.50 %  | 85.98 %  | :star: 已完成    |
+|    4 | Median of Two Sorted Arrays `Hard`                      |  数组，数学  | 99.88 %  | 40.07 %  | :warning: 需优化 |
+|    5 | Longest Palindromic Substring `Medium`                  |    字符串    | 46.04 %  | 79.84 %  | :warning: 需优化 |
+|    6 | ZigZag Conversion `Medium`                              |    字符串    |  9.30 %  | 99.52 %  | :warning: 需优化 |
+|    7 | Reverse Integer `Easy`                                  |     数学     | 100.00 % | 32.12 %  | :warning: 需优化 |
+|    8 | String to Integer (atoi) `Medium`                       | 字符串，数学 | 22.56 %  | 12.20 %  | :warning: 需优化 |
+|    9 | Palindrome Number `Easy`                                | 字符串，数学 | 42.07 %  | 73.53 %  | :warning: 需优化 |
+|   10 | Regular Expression Matching `Hard`                      |    字符串    |  5.04 %  | 95.68 %  | :warning: 需优化 |
+|   11 | Container With Most Water `Medium`                      |     数组    |  82.71 % |  80.96 % | :heavy_check_mark: 已通过 |
+|   12 | Integer to Roman `Medium`                               |  字符串，数学 |  77.48 % |  74.33 % | :heavy_check_mark: 已通过 |
+|   13 | Roman to Integer `Easy`                                 |  字符串，数学 |  18.54 % |  28.45 % | :warning: 需优化 |
+|   14 | Longest Common Prefix `Easy`                            |    字符串    |  33.98 % |  34.15 % | :warning: 需优化 |
+|   15 | 3Sum `Medium`                                           |      -      |  13.48 % |  16.43 % | :warning: 需优化 |
+|   16 | 3Sum Closest `Medium`                                   |     数学     |      - % |      - % |               - |
+|   17 | Letter Combinations of a Phone Number `Medium`          |    字符串    |  71.09 % |  22.07 % | :warning: 需优化 |
+|   18 | 4Sum `Medium`                                           |     数组     |      - % |      - % |               - |
+|   19 | Remove Nth Node From End of List `Medium`               |     链表     | 100.00 % |   7.95 % | :warning: 需优化 |
+|   20 | Valid Parentheses `Easy`                                |    字符串    |  98.62 % |  43.91 % | :warning: 需优化 |
 |  104 | [Maximum Depth of Binary Tree](./p0104/maximum_depth_of_binary_tree/) `Easy` |   二叉树     | 100.00 % |  59.70 % | :heavy_check_mark: 已通过    |
 |  121 | [Best Time to Buy and Sell Stock](./p0121/best_time_to_buy_and_sell_stock/) `Easy` |     数组    |  87.02 % |  69.37 % | :heavy_check_mark: 已通过    |
 |  143 | [Reorder List](./p0143/reorder_list/) `Medium`          |     链表     | 99.88 %  | 91.19 %  | :star: 已完成    |
