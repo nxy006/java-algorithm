@@ -62,5 +62,8 @@
 | 1217 | [Minimum Cost to Move Chips to The Same Position](./p1217/minimum_cost_to_move_chips_to_the_same_position/) `Easy`  |   数组，数学  | 100.00 % |  89.87 % | :star: 已完成    |
 | 1290 | [Convert Binary Number in a Linked List to Integer](./p1290/convert_binary_number_in_a_linked_list_to_integer/) `Easy` |  数组，数学  | 100.00 % | 96.50 %  | :star: 已完成    |
 | 1306 | [Jump Game III](./p1306/jump_game_iii/) `Medium`        |     数组    |  29.98 % |  94.88 % | :warning: 需优化 |
+| 2194 | [Cells in a Range on an Excel Sheet](./p2194/cells_in_a_range_on_an_excel_sheet/) `Easy` |     数组    | 100.00 % |  80.00 % | :heavy_check_mark: 已通过    |
+| 2195 | [Append K Integers With Minimal Sum](./p2195/append_k_integers_with_minimal_sum/) `Medium` |   数组，数学  |  50.00 % |  50.00 % | :warning: 需优化 |
+| 2196 | [Create Binary Tree From Descriptions](./p2196/create_binary_tree_from_descriptions/) `Medium` |   二叉树     |  25.00 % |  25.00 % | :warning: 需优化 |
 
 
