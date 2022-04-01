@@ -56,6 +56,14 @@ public class CaseAssertUtils {
         logger.info("Case PASS!");
     }
 
+    public static void assertEquals(char[] expected, char[] actual) {
+        if (!Arrays.equals(expected, actual)) {
+            logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+            return ;
+        }
+        logger.info("Case PASS!");
+    }
+
     /**
      * 在给定长度范围内检查两个数组是否相等
      */

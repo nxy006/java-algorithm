@@ -39,6 +39,15 @@ public class StructConvertUtils {
         return Arrays.stream(SArr).mapToInt(Integer::valueOf).toArray();
     }
 
+    public static char[] convertToCharArray(String s) {
+        String[] arr = convertToOriginStringArray(s);
+        char[] ans = new char[arr.length];
+        for(int i = 0; i < arr.length; i++) {
+            ans[i] = characterConverter.convertTo(arr[i]);
+        }
+        return ans;
+    }
+
     @Deprecated
     public static int[] convertToIntArray(String s, String separator) {
         String[] arr = s.split(separator);
