@@ -12,7 +12,7 @@
 
 - :x: 未通过
 - :warning: 需优化，已通过但不能达到时间空间均超过 50%
-- :heavy_check_mark: 已通过，时间空间均超过 50% 但至少有一项不足 85%
+- :heavy_check_mark: 已通过，时间空间均超过 50% 但至少有一项不足 85% 或 已是标准解答
 - :star: 已完成，时间空间均超过 85%
 - :star2: 完美，已完成所有解答（复杂数学原理的解法可省略），且至少一个解答时间空间均超过 85%
 
@@ -53,6 +53,7 @@
 |  394 | [Decode String](./p0394/decode_string/) `Medium`        |    字符串    | 100.00 % |  85.43 % | :star: 已完成    |
 |  450 | Delete Node in a BST `Medium`                           | 二叉树，BST  |  6.93 %  |  8.46 %  | :warning: 需优化 |
 |  563 | [Binary Tree Tilt](./p0563/binary_tree_tilt/) `Easy`    |   二叉树     | 100.00 % | 83.37 %  | :star2: 完美    |
+|  680 | [Valid Palindrome II](./p0680/valid_palindrome_ii/) `Easy` |    字符串    |  80.00 % |  15.92 % | :heavy_check_mark: 已通过    |
 |  704 | [Binary Search](./p0704/binary_search/) `Easy`          |     数组    | 100.00 % |  86.13 % | :star2: 完美    |
 |  740 | [Delete and Earn](./p0740/delete_and_earn/) `Medium`    |     数组    |  71.72 % |  75.89 % | :heavy_check_mark: 已通过    |
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
