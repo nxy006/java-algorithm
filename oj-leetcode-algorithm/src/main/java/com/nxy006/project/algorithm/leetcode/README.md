@@ -52,6 +52,7 @@
 |  344 | [Reverse String](./p0344/reverse_string/) `Easy`        |    字符串    | 100.00 % |  86.52 % | :star: 已完成    |
 |  394 | [Decode String](./p0394/decode_string/) `Medium`        |    字符串    | 100.00 % |  85.43 % | :star: 已完成    |
 |  450 | Delete Node in a BST `Medium`                           | 二叉树，BST  |  6.93 %  |  8.46 %  | :warning: 需优化 |
+|  538 | [Convert BST to Greater Tree](./p0538/convert_bst_to_greater_tree/) `Medium` | 二叉树，BST  | 100.00 % |  93.38 % | :star: 已完成    |
 |  563 | [Binary Tree Tilt](./p0563/binary_tree_tilt/) `Easy`    |   二叉树     | 100.00 % | 83.37 %  | :star2: 完美    |
 |  669 | [Trim a Binary Search Tree](./p0669/trim_a_binary_search_tree/) `Medium` | 二叉树，BST  | 100.00 % |  87.65 % | :star2: 完美    |
 |  680 | [Valid Palindrome II](./p0680/valid_palindrome_ii/) `Easy` |    字符串    |  80.00 % |  15.92 % | :heavy_check_mark: 已通过    |
