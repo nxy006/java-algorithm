@@ -15,7 +15,8 @@
 - :heavy_check_mark: 已通过，时间空间均超过 50% 但至少有一项不足 85% 或 已是标准解答
 - :star: 已完成，时间空间均超过 85%
 - :star2: 完美，已完成所有解答（复杂数学原理的解法可省略），且至少一个解答时间空间均超过 85%
-
+- :white_flag: 未完成提高要求
+- :triangular_flag_on_post: 已完成提高要求
 
 | 题号  | 题目名称                                                 |    关键字    | 时间比率 | 空间比率 |       进度       |
 | :--: | :------------------------------------------------------ | :----------: | :------: | :------: | :--------------: |
@@ -45,6 +46,7 @@
 |  147 | [Insertion Sort List](./p0147/insertion_sort_list/) `Medium` |  链表，排序   | 41.14 %  | 90.41 %  | :warning: 需优化 |
 |  152 | [Maximum Product Subarray](./p0152/maximum_product_subarray/) `Medium` | 数组，动态规划 | 92.76 %  | 94.18 %  | :star: 已完成    |
 |  198 | [House Robber](./p0198/house_robber) `Medium`           |     数组    | 100.00 % |  74.44 % | :heavy_check_mark: 已通过    |
+|  230 | [Kth Smallest Element in a BST](./p0230/kth_smallest_element_in_a_bst/) `Medium` | 二叉树，BST  | 100.00 % | 91.65 %  | :star2: 完美，:white_flag: 未完成提高要求    |
 |  231 | [Power of Two](./p0231/power_of_two/) `Easy`            |     数学     |  99.97 % |  89.66 % | :star: 已完成    |
 |  310 | [Minimum Height Trees](./p0310/minimum_height_trees/) `Medium` |     树       |  5.04 %  | 17.30 %  | :warning: 需优化 |
 |  328 | [Odd Even Linked List](./p0328/odd_even_linked_list) `Medium` |     链表    | 100.00 % |  73.35 % | :heavy_check_mark: 已通过    |
