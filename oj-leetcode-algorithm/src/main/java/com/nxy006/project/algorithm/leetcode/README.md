@@ -63,6 +63,7 @@
 |  797 | All Paths From Source to Target `Medium`                |  图，有向图  |  48.56 % |  43.61 % | :warning: 需优化 |
 |  799 | [Champagne Tower](./p0799/champagne_tower/) `Medium`    |   动态规划   |  40.64 % |  38.81 % | :warning: 需优化 |
 |  881 | [Boats to Save People](./p0881/boats_to_save_people/) `Medium` |     数组    |  97.12 % |  92.76 % | :star2: 完美    |
+|  897 | [Increasing Order Search Tree](./p0897/increasing_order_search_tree/) `Easy`  | 二叉树，BST  | 100.00 % |  92.52 % | :star2: 完美    |
 |  938 | [Range Sum of BST](./p0938/range_sum_of_bst/) `Easy`    | 二叉树，BST  | 100.00 % | 88.01 %  | :star2: 完美    |
 |  986 | Interval List Intersections `Medium`                    |     数组    |  14.52 % |  27.67 % | :warning: 需优化 |
 | 1022 | [Sum of Root To Leaf Binary Numbers](./p1022/sum_of_root_to_leaf_binary_numbers/) `Easy` |   二叉树     | 100.00 % |  25.98 % | :warning: 需优化 |
