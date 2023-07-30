@@ -28,6 +28,9 @@ public class StructConvertUtils {
     // Array 数组相关------------------------------------------------------------------------------------------------------------------- //
 
     public static int[] convertToIntArray(String s) {
+        if (s == null) {
+            return null;
+        }
         if (EMPTY_INT_ARRAY.equals(s)) {
             return new int[]{};
         }
@@ -40,6 +43,9 @@ public class StructConvertUtils {
     }
 
     public static char[] convertToCharArray(String s) {
+        if (s == null) {
+            return null;
+        }
         String[] arr = convertToOriginStringArray(s);
         char[] ans = new char[arr.length];
         for(int i = 0; i < arr.length; i++) {
@@ -187,6 +193,9 @@ public class StructConvertUtils {
     }
 
     public static ListNode convertToListNode(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
         ListNode res = new ListNode(0), node = res;
         for (int num : arr) {
             node.next = new ListNode(num);

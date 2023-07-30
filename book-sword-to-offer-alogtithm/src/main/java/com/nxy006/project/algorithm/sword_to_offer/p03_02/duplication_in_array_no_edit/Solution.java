@@ -4,21 +4,28 @@ import com.nxy006.project.alogtithm.utils.CaseAssertUtils;
 import com.nxy006.project.alogtithm.utils.StructConvertUtils;
 
 /**
- * 《剑指Offer —— 名企面试官精讲典型编程题 第 2 版》
- * 面试题3（二）：不修改数组找出重复的数字
- * 题目：在一个长度为n+1的数组里的所有数字都在1到n的范围内，所以数组中至
- *       少有一个数字是重复的。请找出数组中任意一个重复的数字，但不能修改输入的
- *       数组。例如，如果输入长度为8的数组{2, 3, 5, 4, 3, 2, 6, 7}，那么对应的
- *       输出是重复的数字2或者3。
- * 官解：https://github.com/zhedahht/CodingInterviewChinese2/tree/master/03_02_DuplicationInArrayNoEdit
+ * 《剑指Offer —— 名企面试官精讲典型编程题 第 2 版》<br/>
+ *  * 面试题3（二）：不修改数组找出重复的数字
+ * <p>
+ * 题目：在一个长度为n+1的数组里的所有数字都在1到n的范围内，所以数组中至少有一个数字是重复的。请找出数组中任意一个重复的数字，但不能修改输入的
+ *      数组。例如，如果输入长度为8的数组{2, 3, 5, 4, 3, 2, 6, 7}，那么对应的输出是重复的数字2或者3。<br/>
+ * 官解：<a href="https://github.com/zhedahht/CodingInterviewChinese2/tree/master/03_02_DuplicationInArrayNoEdit">gitHub</a>
+ * <p/>
  *
- * 本题只要求定性，找到任一解答，因而本算法提出了一种思路，用二分的方式，每次检查一半范围内的数量是否超过了正常数量，逐个缩小范围
- * 不过，这个算法是不完全正确的，如果 [1,2] 取值范围内有三个数，那么必然存在重复数，但如果有两个数，并不能表示有或没有重复数字
+ * <hr/>
+ *  本题只要求定性，找到任一解答，因而本算法提出了一种思路，用二分的方式，每次检查一半范围内的数量是否超过了正常数量，逐个缩小范围。
+ *  不过，这个算法是不完全正确的，如果 [1,2] 取值范围内有三个数，那么必然存在重复数，但如果有两个数，并不能表示有或没有重复数字<br/>
+ *  时间复杂度：O(nlogn)，空间复杂度：O(1)
  *
- * LeetCode-CN 解答：解答错误（该算法不能通过用例）
- * Link：https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
+ * <p>
+ * LeetCode-CN 解答：<br/>
+ * - Link：<a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof//">leetcode-cn</a><br/>
+ * - 执行用时：0 ms,    在所有 Java 提交中击败了 100.00 % 的用户<br/>
+ * - 内存消耗：46.1 MB, 在所有 Java 提交中击败了  70.35 % 的用户<br/>
+ * - 2021/08/10 22:02
+ * <p/>
  */
-public class Solution {
+public class Solution extends SolutionTemplate {
     public int findRepeatNumber(int[] nums) {
         if (nums == null || nums.length <= 1) {
             return -1;
@@ -46,23 +53,7 @@ public class Solution {
         return -1;
     }
 
-    // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
-
     public static void main(String[] args) {
-        // Leetcode-CN 题目示例
-        caseCheck(new Solution(), "[2,3]", "[2,3,1,0,2,5,3]");
-        // 书籍用例（省略用例5. 异常数据；用例6. 传入 null）
-        caseCheck(new Solution(), "[1]", "[2,1,3,1,4]");            // 1. 重复的数字是数组中最小的数字
-        caseCheck(new Solution(), "[4]", "[2,4,3,1,4]");            // 2. 重复的数字是数组中最大的数字
-        caseCheck(new Solution(), "[2,4]", "[2,1,2,1,4]");          // 3. 数组中存在多个重复的数字
-        caseCheck(new Solution(), "[-1]", "[2,1,3,0,4]");           // 4. 没有重复的数字
-        // Leetcode-CN 失败用例
-        caseCheck(new Solution(), "[0]", "[0,1,2,0,4,5,6,7,8,9]");
-    }
-
-    private static void caseCheck(Solution solution, String expected, String arrStr) {
-        CaseAssertUtils.assertContains(
-                StructConvertUtils.convertToIntArray(expected),
-                solution.findRepeatNumber(StructConvertUtils.convertToIntArray(arrStr)));
+        SolutionTemplate.processCaseTest(new Solution());
     }
 }
