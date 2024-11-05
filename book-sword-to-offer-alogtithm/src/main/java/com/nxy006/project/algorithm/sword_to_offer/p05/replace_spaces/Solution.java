@@ -32,6 +32,6 @@ public class Solution extends SolutionTemplate {
     }
 
     public static void main(String[] args) {
-        SolutionTemplate.processCaseTest(new Solution());
+        SolutionTemplate.processCaseTest(Solution.class);
     }
 }

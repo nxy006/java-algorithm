@@ -14,25 +14,31 @@ import java.util.Stack;
  * 内存消耗：46.7 MB, 在所有 Java 提交中击败了 48.68 % 的用户
  * 2021/07/29 22:52
  */
-public class CQueue {
-    Stack<Integer> in, out;
+public class Solution extends SolutionTemplate {
+    static class MyCQueue extends SolutionTemplate.CQueue {
+        Stack<Integer> in, out;
 
-    public CQueue() {
-        this.in = new Stack<>();
-        this.out = new Stack<>();
-    }
-
-    public void appendTail(int value) {
-        in.push(value);
-    }
-
-    public int deleteHead() {
-        if (out.empty()) {
-            while(!in.empty()) {
-                out.push(in.pop());
-            }
+        public MyCQueue() {
+            this.in = new Stack<>();
+            this.out = new Stack<>();
         }
-        return out.empty() ? -1 : out.pop();
+
+        public void appendTail(int value) {
+            in.push(value);
+        }
+
+        public int deleteHead() {
+            if (out.empty()) {
+                while (!in.empty()) {
+                    out.push(in.pop());
+                }
+            }
+            return out.empty() ? -1 : out.pop();
+        }
+    }
+
+    public static void main(String[] args) {
+        processCaseTest(MyCQueue.class);
     }
 }
 

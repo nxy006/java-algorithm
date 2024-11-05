@@ -21,16 +21,10 @@ import com.nxy006.project.alogtithm.utils.struct.ListNode;
  * </pre></blockquote>
  * <p/>
  */
-public class SolutionTemplate {
-    public int[] reversePrint(ListNode head) {
-        throw new RuntimeException("未实现的方法");
-    }
+public abstract class SolutionTemplate {
+    public abstract int[] reversePrint(ListNode head);
 
     // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
-
-    public static void main(String[] args) {
-        processCaseTest(new SolutionTemplate());
-    }
 
     public static void processCaseTest(SolutionTemplate solution) {
         // Leetcode-CN 题目示例

@@ -1,7 +1,8 @@
 # 33. Search in Rotated Sorted Array `Medium`
 
-- **Origin Link**: [https://leetcode.com/problems/search-in-rotated-sorted-array/](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-- **Tag**: `array`, `binary-search`
+- **Difficulty:** `Medium`
+- **Tag:** `Array`, `Binary Search`
+- **Origin Link:** [Search in Rotated Sorted Array - LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array)
 
 
 ## Description
@@ -14,46 +15,44 @@ Given the array `nums` **after** the rotation and an integer `target`, return *t
 
 You must write an algorithm with `O(log n)` runtime complexity.
 
-
 ## Example
 
-**Example 1:**
+### Example 1
 
 ```
 Input: nums = [4,5,6,7,0,1,2], target = 0
 Output: 4
 ```
 
-**Example 2:**
+### Example 2
 
 ```
 Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
 ```
 
-**Example 3:**
+
+### Example 3
 
 ```
 Input: nums = [1], target = 0
 Output: -1
 ```
 
-
 ## Constraints
 
 - `1 <= nums.length <= 5000`
-- `-104 <= nums[i] <= 104`
+- $-10^4 <= nums[i] <= 10^4$
 - All values of `nums` are **unique**.
 - `nums` is guaranteed to be rotated at some pivot.
-- `-104 <= target <= 104`
+- $-10^4 <= target <= 10^4$
 
-
-## Solution Template
+## Default code
 
 ```java
 class Solution {
     public int search(int[] nums, int target) {
-        
+
     }
 }
 ```

@@ -219,4 +219,16 @@ public class CaseAssertUtils {
         logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
     }
 
+    public static <T> void assertContains(int[][] expected, int[] actual) {
+        boolean isMatch = false;
+        for(int[] nums : expected) {
+            isMatch = Arrays.equals(nums, actual);
+            if (isMatch) {
+                logger.info("Case PASS!");
+                return ;
+            }
+        }
+        logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+    }
+
 }
