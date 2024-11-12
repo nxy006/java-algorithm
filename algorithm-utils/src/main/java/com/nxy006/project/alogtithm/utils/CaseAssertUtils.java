@@ -2,6 +2,7 @@ package com.nxy006.project.alogtithm.utils;
 
 import com.nxy006.project.alogtithm.utils.struct.ListNode;
 import com.nxy006.project.alogtithm.utils.struct.TreeNode;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,12 +10,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 用例断言工具
  */
 public class CaseAssertUtils {
-    private static final Logger logger = LogManager.getLogger("Case-Check");
+    private static final Logger logger = LogManager.getLogger("CaseResult");
+
+    private static ExecutorService executorService;
+    private static final ThreadLocal<AtomicInteger> caseCounter = new ThreadLocal<>();
+    static {
+        caseCounter.set(new AtomicInteger(1));
+    }
 
     public static void assertTrue(boolean condition) {
         if (!condition) {
@@ -38,6 +47,71 @@ public class CaseAssertUtils {
             return ;
         }
         logger.info("Case PASS!");
+    }
+
+    public static void resetCaseCount() {
+        caseCounter.set(new AtomicInteger(1));
+    }
+
+    public static int incrementAndGetCaseCount() {
+        return caseCounter.get().getAndIncrement();
+    }
+
+    /**
+     * 施工调试中
+     */
+    public static <T> void assertEquals(T expected, SolutionProcessor<T> solutionProcessor) {
+        processAndAssert(expected, solutionProcessor, 1000, ResultAsserter.EQUALS_ASSERTER);
+    }
+
+    /**
+     * 施工调试中
+     */
+    public static <T> void processAndAssert(T expected, SolutionProcessor<T> solutionProcessor, long timeout,
+                                            ResultAsserter<T> resultAsserter) {
+        // 每次创建是为了能 shutdown 线程池，不然进程不会自动关闭，暂时没有更好的方法
+        // 另外这样也能解决执行死循环时占用线程池的问题
+        executorService = Executors.newFixedThreadPool(1);
+
+        FutureTask<CaseResult> futureTask = new FutureTask<>(() -> {
+            try {
+                long startTime = System.currentTimeMillis();
+                T result = solutionProcessor.process();
+                long duration = System.currentTimeMillis() - startTime;
+                if (duration > timeout) {
+                    return new CaseResult(CaseResultEnum.TLE, duration);
+                }
+
+                if (resultAsserter.assertResult(expected, result)) {
+                    return new CaseResult(CaseResultEnum.AC, duration);
+                }
+                return new CaseResult(CaseResultEnum.WA,
+                        "Expected: " + expected + " but was: " + result, duration);
+            } catch (Exception ex) {
+                logger.error("执行过程异常", ex);
+                return CaseResult.WA;
+            }
+        });
+
+        CaseResult result;
+        try {
+            executorService.execute(futureTask);
+            result = futureTask.get(timeout*2, TimeUnit.MILLISECONDS);
+        } catch (TimeoutException e) {
+            result = CaseResult.TLE;
+        } catch (Exception e) {
+            result = CaseResult.SYSTEM_ERROR;
+        } finally {
+            executorService.shutdown();
+        }
+
+        // 打印用例结果
+        logger.info("Case {} {} ({}{}){}",
+                incrementAndGetCaseCount(),
+                result.getResult().getDescription(),
+                result.getResult().getCode(),
+                result.getDuration() != -1 ? ", " + result.getDuration() + "ms" : "",
+                StringUtils.isNotEmpty(result.getMessage()) ? ": " + result.getMessage() : "");
     }
 
     public static <T> void assertEquals(double expected, double actual) {
@@ -229,6 +303,90 @@ public class CaseAssertUtils {
             }
         }
         logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
+    }
+
+    public interface ResultAsserter<T> {
+        boolean assertResult(T expected, T result);
+
+        ResultAsserter EQUALS_ASSERTER = new ResultAsserter<Object>() {
+            @Override
+            public boolean assertResult(Object expected, Object result) {
+                return CompareUtils.assertEqualsCommon(expected, result);
+            }
+        };
+    }
+
+    public interface SolutionProcessor<T> {
+        T process();
+    }
+
+    private static class CaseResult {
+        CaseResultEnum result;      // 用例执行结果
+        String message;             // 消息，一般是错误内容
+        long duration = -1;         // 实际执行时间
+
+        public static CaseResult AC = new CaseResult(CaseResultEnum.AC);
+        public static CaseResult WA = new CaseResult(CaseResultEnum.WA);
+        public static CaseResult TLE = new CaseResult(CaseResultEnum.TLE);
+        public static CaseResult RE = new CaseResult(CaseResultEnum.RE);
+        public static CaseResult SYSTEM_ERROR = new CaseResult(CaseResultEnum.SYSTEM_ERROR);
+
+        public CaseResult(CaseResultEnum result) {
+            this.result = result;
+        }
+
+        public CaseResult(CaseResultEnum result, long duration) {
+            this.duration = duration;
+            this.result = result;
+        }
+
+        public CaseResult(CaseResultEnum result, String message) {
+            this.result = result;
+            this.message = message;
+        }
+
+        public CaseResult(CaseResultEnum result, String message, long duration) {
+            this.result = result;
+            this.message = message;
+            this.duration = duration;
+        }
+
+        public CaseResultEnum getResult() {
+            return result;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public long getDuration() {
+            return duration;
+        }
+    }
+
+    public enum CaseResultEnum {
+        AC("Accepted", "用例通过"),
+        WA("Wrong Answer", "错误答案"),
+        TLE("Time Limit Exceed","时间超限"),
+        RE("Runtime Error", "运行错误"),
+        SYSTEM_ERROR("System Error", "评测系统异常")
+        ;
+
+        final String code;
+        final String description;
+
+        CaseResultEnum(String code, String description) {
+            this.code = code;
+            this.description = description;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public String getDescription() {
+            return description;
+        }
     }
 
 }
