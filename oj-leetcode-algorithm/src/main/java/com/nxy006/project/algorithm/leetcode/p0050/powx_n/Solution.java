@@ -4,6 +4,8 @@ package com.nxy006.project.algorithm.leetcode.p0050.powx_n;
  * 模拟
  * 时间复杂度：O(n)，空间复杂度：O(1)
  *
+ * 题目本身难度不高，主要是细节问题：因为 n 的范围非常大，要考虑对 n 的处理时不能越界，且特殊取值要尽早退出避免超时
+ *
  * Runtime  6 ms    , beats  5.73 % of java submissions.
  * Memory   42.09 MB, beats 59.87 % of java submissions.
  * 12/11/2024 15:14
