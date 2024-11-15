@@ -12,7 +12,7 @@ import com.nxy006.project.alogtithm.utils.struct.ListNode;
  * Memory   38.6 MB , beats  73.35 % of java submissions.
  * 12/02/2021 23:30
  */
-public class Solution {
+public class Solution extends SolutionTemplate {
     public ListNode oddEvenList(ListNode head) {
         if (head == null || head.next == null) return head;
 
@@ -37,19 +37,6 @@ public class Solution {
     // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
 
     public static void main(String[] args) {
-        // 官方用例
-        caseCheck(new Solution(), "[1,3,5,2,4]", "[1,2,3,4,5]");
-        caseCheck(new Solution(), "[2,3,6,7,1,5,4]", "[2,1,3,5,6,4,7]");
-        // 自定义用例
-        caseCheck(new Solution(), "[1,1,1,1,1,1,2,2,2,2,2]", "[1,2,1,2,1,2,1,2,1,2,1]");
-        caseCheck(new Solution(), "[1,1,1,1,1,2,2,2,2,2]", "[1,2,1,2,1,2,1,2,1,2]");
-        caseCheck(new Solution(), "[1]", "[1]");
-        caseCheck(new Solution(), "[]", "[]");
-    }
-
-    private static void caseCheck(Solution solution, String expected, String listStr) {
-        CaseAssertUtils.assertEquals(
-                StructConvertUtils.convertToListNode(expected),
-                solution.oddEvenList(StructConvertUtils.convertToListNode(listStr)));
+        processCaseTest(new Solution());
     }
 }

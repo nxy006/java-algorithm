@@ -12,7 +12,7 @@ import com.nxy006.project.alogtithm.utils.struct.ListNode;
  * Memory   39.8 MB , beats  17.02 % of java submissions.
  * 09/08/2021 23:11
  */
-public class Solution {
+public class Solution extends SolutionTemplate {
     public ListNode reverseList(ListNode head) {
         if (head == null) return null;
 
@@ -29,14 +29,6 @@ public class Solution {
     // ---------------------------------------------------------- TEST CASE ----------------------------------------------------------- //
 
     public static void main(String[] args) {
-        caseCheck(new Solution(), "[5,4,3,2,1]", "[1,2,3,4,5]");
-        caseCheck(new Solution(), "[2,1]", "[1,2]");
-        caseCheck(new Solution(), "[]", "[]");
-    }
-
-    private static void caseCheck(Solution solution, String expected, String listStr) {
-        CaseAssertUtils.assertEquals(
-                StructConvertUtils.convertToListNode(expected),
-                solution.reverseList(StructConvertUtils.convertToListNode(listStr)));
+        processCaseTest(new Solution());
     }
 }

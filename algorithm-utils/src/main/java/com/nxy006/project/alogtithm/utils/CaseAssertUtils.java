@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * 用例断言工具
@@ -86,7 +87,7 @@ public class CaseAssertUtils {
                     return new CaseResult(CaseResultEnum.AC, duration);
                 }
                 return new CaseResult(CaseResultEnum.WA,
-                        "Expected: " + expected + " but was: " + result, duration);
+                        "Expected: " + PrettyPrintUtils.toPrettyString(expected) + " but was: " + PrettyPrintUtils.toPrettyString(result), duration);
             } catch (Exception ex) {
                 logger.error("执行过程异常", ex);
                 return CaseResult.WA;
@@ -304,6 +305,8 @@ public class CaseAssertUtils {
         }
         logger.error("Case Failed! Expected: {} but was: {}", expected, actual);
     }
+
+
 
     public interface ResultAsserter<T> {
         boolean assertResult(T expected, T result);
