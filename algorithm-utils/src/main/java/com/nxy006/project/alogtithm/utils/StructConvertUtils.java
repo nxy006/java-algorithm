@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
 public class StructConvertUtils {
     private static final String INT_ARRAY_CONVERT_PATTERN =
             "^\\[\\s*[-]?\\d+(\\s*,\\s*[-]?\\d+)*\\s*\\]$";
+    private static final String DOUBLE_ARRAY_CONVERT_PATTERN =
+            "^\\[\\s*[-]?[\\d.]+(\\s*,\\s*[-]?[\\d.]+)*\\s*\\]$";
     private static final String STRING_ARRAY_CONVERT_PATTERN =
             "^\\[\\s*\\S.*\\S*(\\s*,\\s*\\S.*\\S)*\\s*\\]$";
     private static final String INT_MATRIX_CONVERT_PATTERN =
@@ -41,6 +43,22 @@ public class StructConvertUtils {
         String[] SArr = s.replaceAll("\\s", "").replaceAll("[\\[\\]]", "").split(",");
         return Arrays.stream(SArr).mapToInt(Integer::valueOf).toArray();
     }
+
+    public static double[] convertToDoubleArray(String s) {
+        if (s == null) {
+            return null;
+        }
+        if (EMPTY_INT_ARRAY.equals(s)) {
+            return new double[]{};
+        }
+        if (!Pattern.matches(DOUBLE_ARRAY_CONVERT_PATTERN, s)) {
+            throw new IllegalArgumentException("cannot convert to int array, Input string format error: " + s);
+        }
+
+        String[] SArr = s.replaceAll("\\s", "").replaceAll("[\\[\\]]", "").split(",");
+        return Arrays.stream(SArr).mapToDouble(Double::valueOf).toArray();
+    }
+
 
     public static char[] convertToCharArray(String s) {
         if (s == null) {
